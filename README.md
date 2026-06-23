@@ -1,4 +1,4 @@
-# Sugandh Sharma – Portfolio Website
+# Sugandha Vashishtha – Portfolio Website
 
 A modern, production-ready portfolio website built with **Next.js 14**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**. Designed for DevOps and SRE professionals with a cybersecurity-inspired dark aesthetic, glassmorphism UI, and full Vercel deployment support.
 
