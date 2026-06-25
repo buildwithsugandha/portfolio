@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, ExternalLink, AlertCircle, Lightbulb, TrendingUp } from "lucide-react";
+import { Mail, AlertCircle, Lightbulb, TrendingUp } from "lucide-react";
 
 const projects = [
   {
@@ -106,14 +106,12 @@ export default function Projects() {
                 </div>
                 <div className="flex items-center gap-2">
                   <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg glass text-white/50 hover:text-neon-teal transition-colors text-xs font-mono"
-                    aria-label="GitHub repository"
+                    href="mailto:Sugandh1212@gmail.com?subject=Project Repository Request"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg glass text-white/40 hover:text-neon-teal transition-colors text-xs font-mono"
+                    title="Repository available upon request"
                   >
-                    <Github className="w-3.5 h-3.5" />
-                    Repository
+                    <Mail className="w-3.5 h-3.5" />
+                    Request Repository
                   </a>
                 </div>
               </div>
@@ -179,19 +177,17 @@ export default function Projects() {
 
         {/* Note about repos */}
         <p className="text-center text-white/25 text-xs font-mono mt-6">
-          All repositories available on GitHub · Architecture documentation included in each repo README
+          Repository code & architecture documentation available upon request and consultation
         </p>
 
         {/* CTA */}
         <div className="text-center mt-4">
           <a
-            href="https://github.com/buildwithsugandha"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:Sugandh1212@gmail.com?subject=Project Repository & Consultation Request"
             className="btn-outline inline-flex items-center gap-2"
           >
-            <Github className="w-4 h-4" />
-            View All on GitHub
+            <Mail className="w-4 h-4" />
+            Request Project Details
           </a>
         </div>
       </div>

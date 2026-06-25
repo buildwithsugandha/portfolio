@@ -3,18 +3,18 @@
 import { Download, Printer, FileText, Eye } from "lucide-react";
 
 const resumeHighlights = [
-  "Network & IT Infrastructure Engineering",
-  "Azure & AWS Cloud Administration",
-  "Incident Management & Troubleshooting",
-  "Linux Administration & Automation",
-  "Python / Bash / PowerShell Scripting",
-  "Kubernetes & Container Orchestration",
-  "Terraform Infrastructure as Code",
-  "CI/CD Pipeline Design & Implementation",
+  "Cloud & Site Reliability Engineering (SRE)",
+  "AWS & Azure Cloud Operations",
+  "Incident Management · DRI · SLA/SLO",
+  "Azure Bastion & Hybrid Cloud",
+  "SAST / DAST Vulnerability Remediation",
+  "Dynatrace · Jarvis · Hawkeye · ICM",
+  "Linux & Windows Server Administration",
+  "Shell Scripting · Python · KQL",
 ];
 
 export default function Resume() {
-  const handlePrint = () => {
+  const handleView = () => {
     window.open("/resume.pdf", "_blank");
   };
 
@@ -38,15 +38,11 @@ export default function Resume() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Resume Preview Card */}
           <div className="glass rounded-2xl p-8 relative overflow-hidden">
-            {/* Decorative header bar */}
             <div
               className="absolute top-0 left-0 right-0 h-1"
-              style={{
-                background: "linear-gradient(90deg, #00FFD1, #00B4FF, #9D4EDD)",
-              }}
+              style={{ background: "linear-gradient(90deg, #00FFD1, #00B4FF, #9D4EDD)" }}
             />
 
-            {/* Resume content preview */}
             <div className="space-y-6">
               {/* Name block */}
               <div className="border-b border-white/10 pb-5">
@@ -55,17 +51,17 @@ export default function Resume() {
                     className="w-14 h-14 rounded-xl flex items-center justify-center text-xl font-bold font-display text-gradient"
                     style={{ background: "rgba(0,255,209,0.1)", border: "1px solid rgba(0,255,209,0.2)" }}
                   >
-                    SS
+                    SV
                   </div>
                   <div>
-                    <h3 className="font-display text-xl font-bold text-white">Sugandh Sharma</h3>
-                    <p className="text-neon-teal text-sm font-mono">Network Engineer → Cloud & DevOps</p>
+                    <h3 className="font-display text-xl font-bold text-white">Sugandha Vashishtha</h3>
+                    <p className="text-neon-teal text-sm font-mono">Cloud & Site Reliability Engineer</p>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-x-4 gap-y-1 text-white/30 text-xs font-mono">
-                  <span>📍 India</span>
-                  <span>📧 hello@sugandhsharma.dev</span>
-                  <span>🔗 linkedin.com/in/sugandhsharma</span>
+                  <span>📍 Noida, India</span>
+                  <span>📧 Sugandh1212@gmail.com</span>
+                  <span>🔗 linkedin.com/in/sugandha-vashishtha</span>
                 </div>
               </div>
 
@@ -95,12 +91,9 @@ export default function Resume() {
                 ))}
               </div>
 
-              {/* Blur overlay suggesting more content */}
               <div
                 className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-                style={{
-                  background: "linear-gradient(transparent, rgba(13,21,38,0.8))",
-                }}
+                style={{ background: "linear-gradient(transparent, rgba(13,21,38,0.8))" }}
               />
             </div>
           </div>
@@ -112,8 +105,8 @@ export default function Resume() {
                 Ready to download
               </h3>
               <p className="text-white/50 leading-relaxed">
-                My resume covers my networking background, cloud experience, hands-on DevOps
-                projects, and my clear path toward SRE roles. Available as a PDF for immediate
+                9+ years of experience across cloud operations, SRE, AWS, Azure, incident
+                management, and enterprise infrastructure. Available as a PDF for immediate
                 download.
               </p>
             </div>
@@ -122,14 +115,14 @@ export default function Resume() {
             <div className="space-y-3">
               <a
                 href="/resume.pdf"
-                download="Sugandh_Sharma_Resume.pdf"
+                download="Sugandha_Vashishtha_Resume.pdf"
                 className="btn-primary w-full flex items-center justify-center gap-2"
               >
                 <Download className="w-4 h-4" />
                 Download Resume (PDF)
               </a>
               <button
-                onClick={handlePrint}
+                onClick={handleView}
                 className="btn-outline w-full flex items-center justify-center gap-2"
               >
                 <Eye className="w-4 h-4" />
@@ -150,8 +143,8 @@ export default function Resume() {
                 <FileText className="w-5 h-5 text-neon-teal" />
               </div>
               <div>
-                <p className="text-white font-medium text-sm">Sugandh_Sharma_Resume.pdf</p>
-                <p className="text-white/30 text-xs mt-0.5">Last updated · 2024</p>
+                <p className="text-white font-medium text-sm">Sugandha_Vashishtha_Resume.pdf</p>
+                <p className="text-white/30 text-xs mt-0.5">Last updated · June 2026</p>
               </div>
             </div>
           </div>
