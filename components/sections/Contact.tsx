@@ -77,7 +77,7 @@ export default function Contact() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="section-tag">
-            <span>08</span>
+            <span>09</span>
             Contact
           </span>
           <h2 className="font-display text-4xl sm:text-5xl font-bold">

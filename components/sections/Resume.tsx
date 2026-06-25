@@ -24,7 +24,7 @@ export default function Resume() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="section-tag">
-            <span>07</span>
+            <span>08</span>
             Resume
           </span>
           <h2 className="font-display text-4xl sm:text-5xl font-bold">
