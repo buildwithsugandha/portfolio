@@ -255,9 +255,9 @@ export default function Hero() {
             {/* Quick stats strip below photo */}
             <div className="mt-6 grid grid-cols-3 gap-3 text-center">
               {[
-                { icon: "📍", label: "Noida, India" },
                 { icon: "💼", label: "9+ Yrs Exp" },
-                { icon: "☁️", label: "Cloud & SRE" },
+                { icon: "☁️", label: "4+ Yrs Cloud" },
+                { icon: "🏆", label: "AWS Certified" },
               ].map((item) => (
                 <div
                   key={item.label}
