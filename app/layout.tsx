@@ -21,48 +21,54 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const BASE_URL = "https://portfolio-sigma-three-ja7phcdxpl.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Sugandh Sharma | Network & Cloud DevOps Engineer | SRE Enthusiast",
+  title: "Sugandha Vashishtha | Cloud & Site Reliability Engineer",
   description:
-    "Sugandh Sharma – Network Engineer transitioning into Cloud, DevOps, and Site Reliability Engineering. Skilled in AWS, Azure, Kubernetes, Terraform, and automation. Based in India.",
+    "Cloud and Site Reliability Engineer with 9+ years of experience in AWS, Azure, incident management, SRE, infrastructure automation, and enterprise cloud operations. Based in Noida, India.",
   keywords: [
-    "Sugandh Sharma",
-    "Network Engineer",
-    "DevOps Engineer",
+    "Sugandha Vashishtha",
     "Cloud Engineer",
+    "Site Reliability Engineer",
     "SRE",
-    "Site Reliability Engineering",
+    "DevOps Engineer",
     "AWS",
     "Azure",
+    "Infrastructure Engineer",
     "Kubernetes",
     "Terraform",
+    "Dynatrace",
+    "Incident Management",
+    "Noida",
     "India",
+    "Tech Mahindra",
   ],
-  authors: [{ name: "Sugandh Sharma" }],
-  creator: "Sugandh Sharma",
+  authors: [{ name: "Sugandha Vashishtha" }],
+  creator: "Sugandha Vashishtha",
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://sugandhsharma.dev",
-    title: "Sugandh Sharma | Network & Cloud DevOps Engineer",
+    url: BASE_URL,
+    title: "Sugandha Vashishtha | Cloud & Site Reliability Engineer",
     description:
-      "Network Engineer transitioning to Cloud, DevOps, and SRE. Building reliable, automated infrastructure at scale.",
-    siteName: "Sugandh Sharma Portfolio",
+      "9+ years of experience in cloud operations, SRE, AWS, Azure, and enterprise infrastructure. AWS Certified Solutions Architect & Cloud Practitioner.",
+    siteName: "Sugandha Vashishtha Portfolio",
     images: [
       {
-        url: "/og-image.png",
+        url: `${BASE_URL}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "Sugandh Sharma – DevOps & SRE Portfolio",
+        alt: "Sugandha Vashishtha – Cloud & SRE Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sugandh Sharma | DevOps & SRE Engineer",
+    title: "Sugandha Vashishtha | Cloud & SRE Engineer",
     description:
-      "Network Engineer transitioning to Cloud, DevOps, and SRE. Building reliable, automated infrastructure at scale.",
-    images: ["/og-image.png"],
+      "9+ years in cloud operations, SRE, AWS, Azure, and enterprise infrastructure. Open to Cloud, DevOps, and SRE opportunities.",
+    images: [`${BASE_URL}/og-image.png`],
   },
   robots: {
     index: true,
@@ -77,6 +83,33 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Sugandha Vashishtha",
+  jobTitle: "Cloud & Site Reliability Engineer",
+  url: BASE_URL,
+  sameAs: [
+    "https://linkedin.com/in/sugandha-vashishtha",
+    "https://github.com/buildwithsugandha",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Noida",
+    addressCountry: "IN",
+  },
+  knowsAbout: [
+    "AWS",
+    "Microsoft Azure",
+    "Site Reliability Engineering",
+    "Cloud Infrastructure",
+    "Incident Management",
+    "Kubernetes",
+    "Terraform",
+    "Dynatrace",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -86,7 +119,11 @@ export default function RootLayout({
     <html lang="en" className="dark scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://sugandhsharma.dev" />
+        <link rel="canonical" href={BASE_URL} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans bg-dark-950 text-white antialiased`}

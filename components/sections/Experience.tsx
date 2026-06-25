@@ -4,45 +4,88 @@ import { Building2, Calendar, CheckCircle2 } from "lucide-react";
 
 const experiences = [
   {
-    company: "Current Organization",
-    role: "Network & IT Infrastructure Engineer",
-    duration: "2022 – Present",
+    company: "Tech Mahindra",
+    project: "AT&T Bastion — Microsoft Azure & AWS",
+    role: "Software Engineer · Cloud Infrastructure Engineer",
+    duration: "Jul 2025 – Present",
     type: "Full-time",
     color: "#00FFD1",
     responsibilities: [
-      "Administered and maintained enterprise network infrastructure including routers, switches, firewalls, and load balancers across multi-site deployments",
-      "Managed Azure cloud resources including VMs, virtual networks, NSGs, and Azure Active Directory for hybrid connectivity",
-      "Led incident response for P1/P2 network outages — triaged issues, coordinated with vendors, and restored services within defined SLA windows",
-      "Implemented network monitoring using Nagios and PRTG; reduced mean time to detect (MTTD) by 35% through improved alerting thresholds",
-      "Automated repetitive network audit tasks with Python and Bash scripts, saving ~8 hours per week of manual work",
-      "Configured and maintained site-to-site VPNs and remote access VPN solutions for distributed workforce",
-      "Documented runbooks and incident postmortems, contributing to a growing internal knowledge base",
+      "Designed and managed secure Microsoft Azure infrastructure for enterprise workloads; administered Azure Bastion architecture for secure remote access across hybrid cloud environments",
+      "Managed Azure subscriptions, resource groups, virtual networks, IAM, and shared image galleries across Windows and Linux platforms",
+      "Configured HTTP proxy solutions for traffic and security management; troubleshot Azure-to-on-premises connectivity issues spanning Bastion, Load Balancers, VMs, and proxy configurations",
+      "Monitored infrastructure and application health through metrics, logs, and operational health checks to maintain high availability and SLA compliance",
+      "Used GitHub Copilot to accelerate code-related fixes and infrastructure automation tasks",
     ],
-    achievements: [
-      "Reduced network incidents by 40% through proactive monitoring and capacity planning",
-      "Zero unplanned downtime for critical services over 6 consecutive months",
-      "Automated monthly compliance reporting, cutting report generation time from 4 hours to 15 minutes",
-    ],
-    tags: ["Azure", "Cisco", "Linux", "Python", "Bash", "VPN", "Monitoring"],
+    achievements: [],
+    tags: ["Azure Bastion", "AWS", "IAM", "Load Balancers", "Virtual Networks", "Linux", "GitHub Copilot"],
   },
   {
-    company: "Previous Organization",
-    role: "Junior Network Engineer",
-    duration: "2021 – 2022",
+    company: "Tech Mahindra",
+    project: "Tracfone–Verizon Vulnerability Remediation — AWS",
+    role: "Software Engineer · Quality Analyst",
+    duration: "Aug 2024 – Jun 2025",
     type: "Full-time",
     color: "#00B4FF",
     responsibilities: [
-      "Assisted in deploying and configuring network equipment (switches, routers, access points) in a 500+ node environment",
-      "Performed Level 1 and Level 2 troubleshooting for connectivity, DNS, DHCP, and firewall-related tickets",
-      "Supported Windows Server administration including Active Directory, Group Policy, and user provisioning",
-      "Contributed to migration of on-premises services to cloud infrastructure (Azure IaaS)",
-      "Monitored network performance using SNMP-based tools and escalated anomalies to senior engineers",
+      "Performed SAST and DAST scans across 126 applications to identify security vulnerabilities; tracked findings through remediation in alignment with compliance requirements",
+      "Conducted systematic vulnerability assessment and remediation of OS-level risks across AWS-hosted servers and applications",
+      "Performed OS patching aligned with Change Management protocols; executed pre- and post-patching validation using system checkpoints to ensure minimal downtime",
+      "Accessed AWS EC2 instances via AWS Session Manager for patching and upgrades; managed server snapshots and rollback strategy for risk mitigation and business continuity",
     ],
     achievements: [
-      "Successfully participated in data center migration with zero data loss",
-      "Reduced average ticket resolution time by 20% through improved diagnostic procedures",
+      "Covered 126 applications through SAST/DAST vulnerability assessment in a single engagement cycle",
+      "Zero-downtime patching achieved through structured pre/post-patching validation checkpoints",
     ],
-    tags: ["Windows Server", "Active Directory", "DHCP", "DNS", "Azure", "SNMP"],
+    tags: ["SAST", "DAST", "AWS EC2", "Session Manager", "OS Patching", "Vulnerability Remediation", "Change Management"],
+  },
+  {
+    company: "Tech Mahindra",
+    project: "Microsoft Nebula Score Cloud",
+    role: "Software Engineer · Site Reliability Engineer",
+    duration: "Jul 2022 – Jul 2024",
+    type: "Full-time",
+    color: "#9D4EDD",
+    responsibilities: [
+      "Served as Designated Response Individual (DRI) on an agile SRE team — owned service availability, service health, incident response, and SLA/SLO accountability",
+      "Monitored services using Dynatrace and Microsoft ICM; participated in daily spike-management calls, triaged alerts, and led/contributed to root cause analyses (RCA) for production incidents",
+      "Monitored and supported production applications using Hawkeye and Jarvis; improved alert detection time through proactive monitoring and alert tuning",
+      "Managed Cloudman billing, OS patching, OS upgrades, infrastructure monitoring, and Fabric Manager operations; used KQL extensively to query telemetry and investigate production issues",
+      "Oversaw Microsoft Nebula architecture: offline nodes, storage tier services, hardware failures, host upgrades, reimaging, RAID configuration, WDS, fabric creation, and DHCP scoping",
+    ],
+    achievements: [
+      "Maintained SLA/SLO accountability as DRI for production services running on Microsoft Nebula infrastructure",
+      "Reduced alert detection time through proactive Dynatrace and ICM monitoring tuning",
+      "Coordinated with SETO, Private Lab Networks, and Microsoft Lab Services for hardware and network operations",
+    ],
+    tags: ["SRE", "DRI", "Dynatrace", "Microsoft ICM", "Hawkeye", "Jarvis", "KQL", "Nebula", "Cloudman"],
+  },
+  {
+    company: "Tech Mahindra",
+    project: "Netgear — US, UK, Australia, Canada",
+    role: "Network Support Engineer",
+    duration: "Dec 2021 – May 2022",
+    type: "Full-time",
+    color: "#00FFD1",
+    responsibilities: [
+      "Resolved router, modem, and network connectivity issues for end customers via voice support across four countries",
+      "Configured and installed wireless controllers, routers, and switches; performed routing/switching platform troubleshooting",
+    ],
+    achievements: [],
+    tags: ["Networking", "Routing", "Switching", "Wireless", "TCP/IP", "Customer Support"],
+  },
+  {
+    company: "Xavient Digital Software Solutions",
+    project: "TELUS Communications, Canada",
+    role: "Technical Support Associate",
+    duration: "Aug 2019 – Mar 2021",
+    type: "Full-time",
+    color: "#00B4FF",
+    responsibilities: [
+      "Provided technical support through root cause analysis, support documentation, and resolution; ensured compliance with company policies and data security standards",
+    ],
+    achievements: [],
+    tags: ["Root Cause Analysis", "Technical Support", "Data Security", "Documentation"],
   },
 ];
 
@@ -60,64 +103,59 @@ export default function Experience() {
             Work <span className="text-gradient">History</span>
           </h2>
           <p className="mt-4 text-white/50 max-w-xl mx-auto">
-            Building reliability from the ground up — from physical networks to cloud infrastructure
+            9+ years building reliability — from network operations to cloud infrastructure and SRE at scale
           </p>
         </div>
 
         {/* Timeline */}
         <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px timeline-line hidden sm:block" />
+          <div className="absolute left-4 sm:left-6 top-0 bottom-0 w-px timeline-line" />
 
-          <div className="space-y-12">
+          <div className="space-y-8 pl-12 sm:pl-16">
             {experiences.map((exp, idx) => (
-              <div
-                key={idx}
-                className={`relative flex flex-col md:flex-row gap-8 ${
-                  idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
-              >
+              <div key={idx} className="relative">
                 {/* Timeline dot */}
-                <div className="hidden sm:flex absolute left-6 md:left-1/2 -translate-x-1/2 w-5 h-5 rounded-full items-center justify-center z-10 top-6"
+                <div
+                  className="absolute -left-12 sm:-left-16 top-6 w-5 h-5 rounded-full flex items-center justify-center z-10"
                   style={{ background: exp.color, boxShadow: `0 0 12px ${exp.color}` }}
                 >
                   <div className="w-2 h-2 rounded-full bg-dark-950" />
                 </div>
 
-                {/* Spacer for alternating layout */}
-                <div className="hidden md:block md:w-1/2" />
-
                 {/* Card */}
-                <div className="md:w-1/2">
-                  <div className="glass glass-hover rounded-2xl p-6 ml-10 sm:ml-0">
-                    {/* Header */}
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
-                      <div>
-                        <h3 className="font-display font-bold text-lg text-white">
-                          {exp.role}
-                        </h3>
-                        <div className="flex items-center gap-2 mt-1">
-                          <Building2 className="w-3.5 h-3.5 text-white/40" />
-                          <span className="text-white/50 text-sm">{exp.company}</span>
-                        </div>
+                <div className="glass glass-hover rounded-2xl p-6">
+                  {/* Header */}
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-1">
+                    <div>
+                      <h3 className="font-display font-bold text-base text-white leading-snug">
+                        {exp.role}
+                      </h3>
+                      <div className="flex items-center gap-2 mt-1">
+                        <Building2 className="w-3.5 h-3.5 text-white/40" />
+                        <span className="text-white/60 text-sm font-medium">{exp.company}</span>
                       </div>
-                      <div className="flex items-center gap-1.5 flex-shrink-0">
-                        <Calendar className="w-3.5 h-3.5 text-white/30" />
-                        <span
-                          className="text-xs font-mono px-3 py-1 rounded-full"
-                          style={{
-                            background: `${exp.color}15`,
-                            border: `1px solid ${exp.color}30`,
-                            color: exp.color,
-                          }}
-                        >
-                          {exp.duration}
-                        </span>
-                      </div>
+                      <p className="text-white/30 text-xs font-mono mt-0.5">
+                        📁 {exp.project}
+                      </p>
                     </div>
+                    <div className="flex items-center gap-1.5 flex-shrink-0">
+                      <Calendar className="w-3.5 h-3.5 text-white/30" />
+                      <span
+                        className="text-xs font-mono px-3 py-1 rounded-full"
+                        style={{
+                          background: `${exp.color}15`,
+                          border: `1px solid ${exp.color}30`,
+                          color: exp.color,
+                        }}
+                      >
+                        {exp.duration}
+                      </span>
+                    </div>
+                  </div>
 
-                    {/* Responsibilities */}
-                    <div className="mb-5">
+                  {/* Responsibilities */}
+                  {exp.responsibilities.length > 0 && (
+                    <div className="mt-4 mb-4">
                       <p className="text-white/30 text-xs font-mono uppercase tracking-wider mb-3">
                         Responsibilities
                       </p>
@@ -133,11 +171,13 @@ export default function Experience() {
                         ))}
                       </ul>
                     </div>
+                  )}
 
-                    {/* Achievements */}
-                    <div className="mb-5">
+                  {/* Achievements */}
+                  {exp.achievements.length > 0 && (
+                    <div className="mb-4">
                       <p className="text-white/30 text-xs font-mono uppercase tracking-wider mb-3">
-                        Key Achievements
+                        Key Outcomes
                       </p>
                       <ul className="space-y-2">
                         {exp.achievements.map((a, i) => (
@@ -151,15 +191,15 @@ export default function Experience() {
                         ))}
                       </ul>
                     </div>
+                  )}
 
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2">
-                      {exp.tags.map((tag) => (
-                        <span key={tag} className="skill-badge">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {exp.tags.map((tag) => (
+                      <span key={tag} className="skill-badge">
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>

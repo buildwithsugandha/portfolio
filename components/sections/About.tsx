@@ -1,39 +1,39 @@
 "use client";
 
-import { Network, Cloud, Code2, Shield, GraduationCap, Target } from "lucide-react";
+import { Cloud, Shield, GraduationCap, Target, Server, Eye } from "lucide-react";
 
 const highlights = [
   {
-    icon: Network,
-    label: "IT Infrastructure & Network Ops",
-    color: "rgba(0,255,209,0.8)",
-    bg: "rgba(0,255,209,0.08)",
-  },
-  {
     icon: Cloud,
-    label: "Azure & AWS Cloud Administration",
+    label: "AWS & Azure Cloud Operations",
     color: "rgba(0,180,255,0.8)",
     bg: "rgba(0,180,255,0.08)",
   },
   {
     icon: Shield,
-    label: "Incident Management & SRE",
+    label: "SRE · Incident Management · DRI",
     color: "rgba(157,78,221,0.8)",
     bg: "rgba(157,78,221,0.08)",
   },
   {
-    icon: Code2,
-    label: "Automation & Scripting",
+    icon: Eye,
+    label: "Dynatrace, Jarvis & Hawkeye Observability",
+    color: "rgba(0,255,209,0.8)",
+    bg: "rgba(0,255,209,0.08)",
+  },
+  {
+    icon: Server,
+    label: "On-Prem · Hybrid Cloud · Azure Bastion",
     color: "rgba(0,255,209,0.8)",
     bg: "rgba(0,255,209,0.08)",
   },
 ];
 
 const stats = [
-  { value: "3+", label: "Years in IT Infra" },
-  { value: "2", label: "Cloud Platforms" },
-  { value: "10+", label: "Technologies" },
-  { value: "∞", label: "Curiosity" },
+  { value: "9+", label: "Years in IT" },
+  { value: "4+", label: "Years in Cloud & SRE" },
+  { value: "3", label: "Cloud Platforms" },
+  { value: "2", label: "AWS Certifications" },
 ];
 
 export default function About() {
@@ -49,56 +49,65 @@ export default function About() {
             </span>
 
             <h2 className="font-display text-4xl sm:text-5xl font-bold mb-6">
-              Where <span className="text-gradient">Networks</span> meet{" "}
-              <span className="text-gradient">the Cloud</span>
+              Where <span className="text-gradient">Operations</span> meet{" "}
+              <span className="text-gradient">Reliability</span>
             </h2>
 
             <div className="space-y-4 text-white/60 leading-relaxed">
               <p>
-                I&apos;m a Network Engineer with hands-on experience in IT infrastructure
-                operations, cloud administration, and incident management. My foundation in
-                TCP/IP, routing protocols, VPNs, and firewall management gives me a deep
-                understanding of the systems that power modern cloud environments.
+                I&apos;m <span className="text-white font-medium">Sugandha Vashishtha</span>, a
+                Cloud and Site Reliability Engineer with 9+ years of experience in IT,
+                including 4+ years specializing in cloud operations and SRE across
+                Amazon Web Services, Microsoft Azure, and Microsoft Nebula on-premises
+                environments.
               </p>
               <p>
-                Currently, I&apos;m channeling that operational expertise into a deliberate
-                transition toward <span className="text-neon-teal font-medium">Cloud Engineering</span>,{" "}
-                <span className="text-neon-teal font-medium">DevOps</span>, and{" "}
-                <span className="text-neon-teal font-medium">Site Reliability Engineering</span>.
+                At <span className="text-neon-teal font-medium">Tech Mahindra</span>, I&apos;ve served
+                as a <span className="text-white/80">Designated Response Individual (DRI)</span> on
+                agile SRE teams — owning service availability, incident response, and
+                SLA/SLO accountability for production workloads at Microsoft scale. I&apos;ve
+                monitored and triaged alerts using Dynatrace, Jarvis, Hawkeye, and
+                Microsoft ICM, and led root cause analyses for production incidents.
+              </p>
+              <p>
                 I believe the best SREs come from ops — because they&apos;ve felt the 3 AM pages,
                 traced the packet drops, and learned that reliability is a feature, not an afterthought.
-              </p>
-              <p>
-                I&apos;m actively building on{" "}
-                <span className="text-white/80">AWS and Azure</span>, learning Kubernetes
-                orchestration, writing Terraform for infrastructure as code, and automating
-                everything I can with Python and Bash. My goal is to work on systems at scale —
-                ones where the architecture decisions I make today determine uptime tomorrow.
               </p>
             </div>
 
             {/* Education */}
-            <div className="mt-8 flex items-start gap-3 glass rounded-xl p-4">
-              <GraduationCap className="w-5 h-5 text-neon-teal mt-0.5 flex-shrink-0" />
-              <div>
-                <p className="text-white font-medium text-sm">
-                  Master of Computer Applications (MCA)
-                </p>
-                <p className="text-white/40 text-xs mt-0.5">
-                  Manipal University Jaipur, India
-                </p>
+            <div className="mt-8 space-y-3">
+              <div className="flex items-start gap-3 glass rounded-xl p-4">
+                <GraduationCap className="w-5 h-5 text-neon-teal mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-white font-medium text-sm">
+                    Master of Computer Applications (MCA) — Pursuing
+                  </p>
+                  <p className="text-white/40 text-xs mt-0.5">
+                    Manipal University Jaipur · 2026 – 2028
+                  </p>
+                </div>
               </div>
-            </div>
-
-            {/* Career goal */}
-            <div className="mt-4 flex items-start gap-3 glass rounded-xl p-4">
-              <Target className="w-5 h-5 text-neon-blue mt-0.5 flex-shrink-0" />
-              <div>
-                <p className="text-white font-medium text-sm">Career Goal</p>
-                <p className="text-white/40 text-xs mt-0.5">
-                  Transitioning to Cloud, DevOps, and SRE roles — building the reliability
-                  layer of modern infrastructure
-                </p>
+              <div className="flex items-start gap-3 glass rounded-xl p-4">
+                <GraduationCap className="w-5 h-5 text-neon-blue mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-white font-medium text-sm">
+                    Bachelor of Computer Applications (BCA)
+                  </p>
+                  <p className="text-white/40 text-xs mt-0.5">
+                    Manipal University Jaipur · 2022 – 2025
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 glass rounded-xl p-4">
+                <Target className="w-5 h-5 text-neon-blue mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-white font-medium text-sm">Current Focus</p>
+                  <p className="text-white/40 text-xs mt-0.5">
+                    Cloud infrastructure engineering, Azure Bastion architecture, hybrid cloud
+                    security, and expanding toward CKA and Terraform certification
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -129,7 +138,7 @@ export default function About() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {stats.map((stat) => (
                 <div
                   key={stat.label}
@@ -151,18 +160,24 @@ export default function About() {
                 <span className="w-3 h-3 rounded-full bg-red-500/60" />
                 <span className="w-3 h-3 rounded-full bg-yellow-500/60" />
                 <span className="w-3 h-3 rounded-full bg-green-500/60" />
-                <span className="ml-2 text-white/20 text-xs">sugandh@cloud:~$</span>
+                <span className="ml-2 text-white/20 text-xs">sugandha@cloud:~$</span>
               </div>
               <div className="space-y-1 text-white/50">
                 <p>
                   <span className="text-neon-teal">$</span> whoami
                 </p>
-                <p className="text-white/70">sugandh-sharma</p>
+                <p className="text-white/70">sugandha-vashishtha</p>
+                <p className="mt-2">
+                  <span className="text-neon-teal">$</span> cat /etc/current-role
+                </p>
+                <p className="text-white/70">
+                  Cloud Infrastructure Engineer @ Tech Mahindra
+                </p>
                 <p className="mt-2">
                   <span className="text-neon-teal">$</span> cat /etc/current-focus
                 </p>
                 <p className="text-white/70">
-                  Cloud ▸ DevOps ▸ SRE ▸ Kubernetes ▸ IaC
+                  Azure Bastion ▸ AWS ▸ SRE ▸ Observability ▸ CKA
                 </p>
                 <p className="mt-2">
                   <span className="text-neon-teal">$</span> echo $AVAILABILITY

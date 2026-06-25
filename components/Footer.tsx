@@ -16,10 +16,10 @@ export default function Footer() {
             </div>
             <div>
               <p className="font-display font-bold text-white">
-                Sugandh <span className="text-gradient-teal">Sharma</span>
+                Sugandha <span className="text-gradient-teal">Vashishtha</span>
               </p>
               <p className="text-white/30 text-xs font-mono">
-                Network → Cloud → DevOps → SRE
+                Cloud & Site Reliability Engineer
               </p>
             </div>
           </div>
@@ -39,7 +39,7 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-end gap-3">
             <div className="flex items-center gap-3">
               <a
-                href="https://github.com/sugandhsharma"
+                href="https://github.com/buildwithsugandha"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg glass text-white/40 hover:text-neon-teal transition-colors"
@@ -48,7 +48,7 @@ export default function Footer() {
                 <Github className="w-4 h-4" />
               </a>
               <a
-                href="https://linkedin.com/in/sugandhsharma"
+                href="https://linkedin.com/in/sugandha-vashishtha"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg glass text-white/40 hover:text-neon-teal transition-colors"
@@ -57,7 +57,7 @@ export default function Footer() {
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
-                href="mailto:hello@sugandhsharma.dev"
+                href="mailto:Sugandh1212@gmail.com"
                 className="p-2 rounded-lg glass text-white/40 hover:text-neon-teal transition-colors"
                 aria-label="Email"
               >
@@ -65,7 +65,7 @@ export default function Footer() {
               </a>
             </div>
             <p className="text-white/20 text-xs font-mono">
-              © {year} Sugandh Sharma · Crafted with ⚡
+              © {year} Sugandha Vashishtha · Crafted with ⚡
             </p>
           </div>
         </div>

@@ -1,97 +1,72 @@
 "use client";
 
-import { useState } from "react";
-
-const skillCategories = [
+const skillTiers = [
   {
-    id: "cloud",
-    label: "Cloud",
-    emoji: "☁️",
-    color: "#00B4FF",
-    bg: "rgba(0,180,255,0.08)",
-    border: "rgba(0,180,255,0.2)",
-    skills: [
-      { name: "AWS", level: 75, icon: "🟠" },
-      { name: "Azure", level: 80, icon: "🔵" },
-    ],
-  },
-  {
-    id: "devops",
-    label: "DevOps",
-    emoji: "⚙️",
+    id: "expertise",
+    label: "Expertise",
+    subtitle: "Core competencies — used daily in production",
     color: "#00FFD1",
     bg: "rgba(0,255,209,0.08)",
-    border: "rgba(0,255,209,0.2)",
+    border: "rgba(0,255,209,0.25)",
+    dotColor: "bg-neon-teal",
     skills: [
-      { name: "Docker", level: 80, icon: "🐳" },
-      { name: "Kubernetes", level: 70, icon: "☸️" },
-      { name: "Terraform", level: 70, icon: "🌍" },
-      { name: "Jenkins", level: 65, icon: "🔧" },
-      { name: "GitHub Actions", level: 75, icon: "⚡" },
-      { name: "Ansible", level: 65, icon: "🅰️" },
+      { name: "Microsoft Azure", icon: "🔵" },
+      { name: "AWS", icon: "🟠" },
+      { name: "Incident Management", icon: "🚨" },
+      { name: "SRE / DRI", icon: "🛡️" },
+      { name: "Dynatrace", icon: "📊" },
+      { name: "Microsoft ICM", icon: "🔔" },
+      { name: "Azure Bastion", icon: "🔐" },
+      { name: "Linux Administration", icon: "🐧" },
+      { name: "Windows Server", icon: "🪟" },
+      { name: "KQL (Kusto)", icon: "🔍" },
+      { name: "SQL", icon: "🗄️" },
+      { name: "SLA / SLO Management", icon: "📈" },
     ],
   },
   {
-    id: "monitoring",
-    label: "Monitoring",
-    emoji: "📊",
-    color: "#9D4EDD",
-    bg: "rgba(157,78,221,0.08)",
-    border: "rgba(157,78,221,0.2)",
-    skills: [
-      { name: "Grafana", level: 75, icon: "📈" },
-      { name: "Prometheus", level: 70, icon: "🔥" },
-      { name: "Datadog", level: 65, icon: "🐶" },
-      { name: "Splunk", level: 60, icon: "🔍" },
-    ],
-  },
-  {
-    id: "networking",
-    label: "Networking",
-    emoji: "🌐",
-    color: "#00FFD1",
-    bg: "rgba(0,255,209,0.08)",
-    border: "rgba(0,255,209,0.2)",
-    skills: [
-      { name: "TCP/IP", level: 92, icon: "🔗" },
-      { name: "DNS", level: 88, icon: "📡" },
-      { name: "Routing", level: 85, icon: "🛣️" },
-      { name: "VPN", level: 82, icon: "🔒" },
-      { name: "Firewalls", level: 80, icon: "🛡️" },
-      { name: "Load Balancers", level: 78, icon: "⚖️" },
-    ],
-  },
-  {
-    id: "os",
-    label: "OS",
-    emoji: "💻",
+    id: "proficient",
+    label: "Proficient",
+    subtitle: "Hands-on project & work experience",
     color: "#00B4FF",
     bg: "rgba(0,180,255,0.08)",
-    border: "rgba(0,180,255,0.2)",
+    border: "rgba(0,180,255,0.25)",
+    dotColor: "bg-neon-blue",
     skills: [
-      { name: "Linux", level: 88, icon: "🐧" },
-      { name: "Windows Server", level: 82, icon: "🪟" },
+      { name: "SAST / DAST", icon: "🔒" },
+      { name: "Vulnerability Remediation", icon: "🩹" },
+      { name: "AWS EC2 & IAM", icon: "☁️" },
+      { name: "AWS Session Manager", icon: "🔑" },
+      { name: "Hawkeye & Jarvis", icon: "👁️" },
+      { name: "Shell Scripting", icon: "📜" },
+      { name: "Python (Fundamentals)", icon: "🐍" },
+      { name: "Docker", icon: "🐳" },
+      { name: "CI/CD Pipelines", icon: "⚡" },
+      { name: "Git & GitHub", icon: "🐙" },
+      { name: "GitHub Copilot", icon: "🤖" },
+      { name: "TCP/IP & Networking", icon: "🌐" },
     ],
   },
   {
-    id: "programming",
-    label: "Scripting",
-    emoji: "💻",
+    id: "learning",
+    label: "Learning & Building",
+    subtitle: "Actively studying and expanding",
     color: "#9D4EDD",
     bg: "rgba(157,78,221,0.08)",
-    border: "rgba(157,78,221,0.2)",
+    border: "rgba(157,78,221,0.25)",
+    dotColor: "bg-purple-400",
     skills: [
-      { name: "Python", level: 72, icon: "🐍" },
-      { name: "Bash", level: 80, icon: "📜" },
-      { name: "PowerShell", level: 75, icon: "💙" },
+      { name: "Kubernetes", icon: "☸️" },
+      { name: "Terraform", icon: "🌍" },
+      { name: "Prometheus & Grafana", icon: "📉" },
+      { name: "GitHub Actions", icon: "⚙️" },
+      { name: "Ansible", icon: "🅰️" },
+      { name: "Snowflake", icon: "❄️" },
     ],
   },
 ];
 
 export default function Skills() {
-  const [active, setActive] = useState("cloud");
-  const currentCat = skillCategories.find((c) => c.id === active)!;
-
   return (
     <section id="skills" className="relative z-10 py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,90 +80,91 @@ export default function Skills() {
             Technical <span className="text-gradient">Arsenal</span>
           </h2>
           <p className="mt-4 text-white/50 max-w-xl mx-auto">
-            Tools and technologies I use to build, monitor, and scale reliable infrastructure
+            Skills organized by depth of hands-on experience — from daily production use to active learning
           </p>
         </div>
 
-        {/* Tab buttons */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {skillCategories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setActive(cat.id)}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium font-mono transition-all duration-200 ${
-                active === cat.id
-                  ? "text-dark-950 font-bold"
-                  : "glass text-white/50 hover:text-white"
-              }`}
-              style={
-                active === cat.id
-                  ? {
-                      background: `linear-gradient(135deg, ${cat.color}, ${cat.color}99)`,
-                      boxShadow: `0 0 20px ${cat.color}40`,
-                    }
-                  : {}
-              }
-            >
-              {cat.emoji} {cat.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Skills grid */}
-        <div
-          key={active}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-        >
-          {currentCat.skills.map((skill, i) => (
+        {/* Tier cards */}
+        <div className="space-y-8">
+          {skillTiers.map((tier) => (
             <div
-              key={skill.name}
-              className="glass glass-hover rounded-xl p-5"
-              style={{
-                animationDelay: `${i * 60}ms`,
-                border: `1px solid ${currentCat.border}`,
-              }}
+              key={tier.id}
+              className="glass rounded-2xl p-6 sm:p-8"
+              style={{ border: `1px solid ${tier.border}` }}
             >
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center gap-2.5">
-                  <span className="text-xl">{skill.icon}</span>
-                  <span className="font-medium text-white text-sm">{skill.name}</span>
-                </div>
+              {/* Tier header */}
+              <div className="flex items-center gap-3 mb-2">
                 <span
-                  className="text-xs font-mono font-bold"
-                  style={{ color: currentCat.color }}
-                >
-                  {skill.level}%
-                </span>
-              </div>
-
-              {/* Progress bar */}
-              <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
-                <div
-                  className="h-full rounded-full transition-all duration-700"
-                  style={{
-                    width: `${skill.level}%`,
-                    background: `linear-gradient(90deg, ${currentCat.color}99, ${currentCat.color})`,
-                    boxShadow: `0 0 10px ${currentCat.color}50`,
-                  }}
+                  className="w-3 h-3 rounded-full flex-shrink-0"
+                  style={{ background: tier.color, boxShadow: `0 0 8px ${tier.color}` }}
                 />
+                <h3
+                  className="font-display font-bold text-lg"
+                  style={{ color: tier.color }}
+                >
+                  {tier.label}
+                </h3>
+              </div>
+              <p className="text-white/35 text-xs font-mono mb-5 ml-6">
+                {tier.subtitle}
+              </p>
+
+              {/* Skill badges */}
+              <div className="flex flex-wrap gap-2.5">
+                {tier.skills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:scale-105"
+                    style={{
+                      background: tier.bg,
+                      border: `1px solid ${tier.border}`,
+                      color: "rgba(255,255,255,0.85)",
+                    }}
+                  >
+                    <span className="text-base leading-none">{skill.icon}</span>
+                    <span>{skill.name}</span>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
         </div>
 
-        {/* All skills quick view */}
-        <div className="mt-12 glass rounded-2xl p-6">
-          <p className="text-white/30 text-xs font-mono mb-4 uppercase tracking-widest">
-            All Technologies
+        {/* On-Premises specialty row */}
+        <div className="mt-8 glass rounded-2xl p-6" style={{ border: "1px solid rgba(255,153,0,0.2)" }}>
+          <div className="flex items-center gap-3 mb-2">
+            <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ background: "#FF9900", boxShadow: "0 0 8px #FF9900" }} />
+            <h3 className="font-display font-bold text-lg" style={{ color: "#FF9900" }}>
+              On-Premises Infrastructure
+            </h3>
+          </div>
+          <p className="text-white/35 text-xs font-mono mb-5 ml-6">
+            Enterprise datacenter & bare-metal operations — Microsoft Nebula environments
           </p>
-          <div className="flex flex-wrap gap-2">
-            {skillCategories.flatMap((cat) =>
-              cat.skills.map((skill) => (
-                <span key={`${cat.id}-${skill.name}`} className="skill-badge">
-                  {skill.name}
-                </span>
-              ))
-            )}
+          <div className="flex flex-wrap gap-2.5">
+            {[
+              { name: "Microsoft Nebula", icon: "⚡" },
+              { name: "Cloudman", icon: "☁️" },
+              { name: "Fabric Manager", icon: "🔧" },
+              { name: "RAID Configuration", icon: "💾" },
+              { name: "Bare Metal Ops", icon: "🖥️" },
+              { name: "WDS", icon: "📦" },
+              { name: "DHCP Scoping", icon: "🌐" },
+              { name: "Hardware Management", icon: "🔩" },
+            ].map((skill) => (
+              <div
+                key={skill.name}
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-medium hover:scale-105 transition-all duration-200"
+                style={{
+                  background: "rgba(255,153,0,0.06)",
+                  border: "1px solid rgba(255,153,0,0.2)",
+                  color: "rgba(255,255,255,0.85)",
+                }}
+              >
+                <span className="text-base leading-none">{skill.icon}</span>
+                <span>{skill.name}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

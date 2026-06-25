@@ -1,71 +1,71 @@
 "use client";
 
-import { Github, ExternalLink, Star } from "lucide-react";
+import { Github, ExternalLink, AlertCircle, Lightbulb, TrendingUp } from "lucide-react";
 
 const projects = [
   {
     title: "AWS Three-Tier Architecture",
-    description:
-      "Production-grade three-tier web application architecture on AWS using EC2, RDS (Multi-AZ), and Application Load Balancer. Implements auto-scaling, VPC segmentation, security groups, NAT Gateways, and CloudWatch monitoring. Infrastructure provisioned entirely via Terraform.",
-    tags: ["AWS", "Terraform", "VPC", "EC2", "RDS", "ALB", "CloudWatch"],
+    emoji: "🏗️",
     color: "#FF9900",
     bg: "rgba(255,153,0,0.05)",
-    border: "rgba(255,153,0,0.15)",
-    emoji: "🏗️",
-    github: "https://github.com/sugandhsharma/aws-three-tier-arch",
-    demo: "#",
+    border: "rgba(255,153,0,0.2)",
+    problem: "Need a scalable, fault-tolerant web application infrastructure that handles traffic spikes without manual intervention.",
+    solution: "Production-grade three-tier architecture on AWS using EC2, RDS Multi-AZ, and ALB. Infrastructure provisioned entirely via Terraform with VPC segmentation, security groups, NAT Gateways, and CloudWatch monitoring.",
+    outcome: "Auto-scaling group handles traffic spikes automatically. Multi-AZ RDS ensures database high availability with automatic failover under 60 seconds.",
+    tags: ["AWS", "Terraform", "VPC", "EC2", "RDS", "ALB", "CloudWatch"],
+    github: "https://github.com/buildwithsugandha/aws-three-tier-arch",
     highlights: ["Multi-AZ", "Auto-scaling", "IaC"],
   },
   {
     title: "Kubernetes Monitoring Stack",
-    description:
-      "Full observability stack for Kubernetes clusters using Prometheus, Grafana, and Alertmanager. Includes pre-built dashboards for cluster health, pod metrics, node resource usage, and custom SLO tracking. Deployed via Helm charts with GitOps-ready configuration.",
-    tags: ["Kubernetes", "Prometheus", "Grafana", "Helm", "Alertmanager"],
+    emoji: "📊",
     color: "#326CE5",
     bg: "rgba(50,108,229,0.05)",
-    border: "rgba(50,108,229,0.15)",
-    emoji: "📊",
-    github: "https://github.com/sugandhsharma/k8s-monitoring-stack",
-    demo: "#",
+    border: "rgba(50,108,229,0.2)",
+    problem: "Kubernetes clusters running without visibility into pod health, node resource usage, or SLO breach alerting.",
+    solution: "Full observability stack with Prometheus, Grafana, and Alertmanager. Pre-built dashboards for cluster health, pod metrics, and custom SLO tracking. Deployed via Helm charts with GitOps-ready configuration.",
+    outcome: "Real-time visibility into cluster health. SLO alerting fires before end-users notice degradation, reducing mean time to detect (MTTD).",
+    tags: ["Kubernetes", "Prometheus", "Grafana", "Helm", "Alertmanager"],
+    github: "https://github.com/buildwithsugandha/k8s-monitoring-stack",
     highlights: ["SLO Tracking", "Helm", "GitOps"],
   },
   {
     title: "Terraform Infrastructure Automation",
-    description:
-      "Modular Terraform codebase for multi-environment AWS infrastructure (dev/staging/prod). Uses remote state management with S3 and DynamoDB locking, workspaces, and reusable modules for VPC, EKS, RDS, and IAM. Integrated with GitHub Actions for automated plan/apply.",
-    tags: ["Terraform", "AWS", "GitHub Actions", "S3", "EKS", "IAM"],
+    emoji: "🌍",
     color: "#7B42BC",
     bg: "rgba(123,66,188,0.05)",
-    border: "rgba(123,66,188,0.15)",
-    emoji: "🌍",
-    github: "https://github.com/sugandhsharma/terraform-infra-automation",
-    demo: "#",
+    border: "rgba(123,66,188,0.2)",
+    problem: "Manual infrastructure provisioning across dev/staging/prod environments leads to configuration drift and inconsistent deployments.",
+    solution: "Modular Terraform codebase for multi-environment AWS infrastructure using remote state management with S3/DynamoDB locking, workspaces, and reusable modules for VPC, EKS, RDS, and IAM. Integrated with GitHub Actions.",
+    outcome: "Infrastructure changes reviewed and applied automatically via CI/CD. Environment parity enforced across dev, staging, and production.",
+    tags: ["Terraform", "AWS", "GitHub Actions", "S3", "EKS", "IAM"],
+    github: "https://github.com/buildwithsugandha/terraform-infra-automation",
     highlights: ["Multi-env", "Remote State", "CI/CD"],
   },
   {
-    title: "Azure Hybrid Connectivity Project",
-    description:
-      "Site-to-site VPN connectivity between on-premises network and Azure Virtual Network. Includes Azure VPN Gateway setup, local network gateway configuration, BGP routing, and NSG rules. Documented with step-by-step runbooks and tested failover procedures.",
-    tags: ["Azure", "VPN Gateway", "BGP", "NSG", "Hybrid Cloud"],
+    title: "Azure Hybrid Connectivity",
+    emoji: "🔗",
     color: "#0078D4",
     bg: "rgba(0,120,212,0.05)",
-    border: "rgba(0,120,212,0.15)",
-    emoji: "🔗",
-    github: "https://github.com/sugandhsharma/azure-hybrid-connectivity",
-    demo: "#",
+    border: "rgba(0,120,212,0.2)",
+    problem: "On-premises workloads need secure, reliable connectivity to Azure virtual networks without exposing public endpoints.",
+    solution: "Site-to-site VPN between on-premises network and Azure VNet using Azure VPN Gateway, local network gateway configuration, BGP routing, and NSG rules. Documented with step-by-step runbooks and tested failover procedures.",
+    outcome: "Secure hybrid connectivity established. BGP dynamic routing ensures automatic failover. Runbooks reduced incident resolution time during connectivity issues.",
+    tags: ["Azure", "VPN Gateway", "BGP", "NSG", "Hybrid Cloud"],
+    github: "https://github.com/buildwithsugandha/azure-hybrid-connectivity",
     highlights: ["BGP Routing", "Failover", "Hybrid"],
   },
   {
     title: "DevOps CI/CD Pipeline",
-    description:
-      "End-to-end CI/CD pipeline for a containerized Node.js app using GitHub Actions, Docker, and Kubernetes. Pipeline stages include linting, unit tests, Docker image build/push to ECR, security scanning with Trivy, and automated deployment to EKS with rollback capability.",
-    tags: ["GitHub Actions", "Docker", "Kubernetes", "ECR", "Trivy", "EKS"],
+    emoji: "⚡",
     color: "#00FFD1",
     bg: "rgba(0,255,209,0.05)",
-    border: "rgba(0,255,209,0.15)",
-    emoji: "⚡",
-    github: "https://github.com/sugandhsharma/devops-cicd-pipeline",
-    demo: "#",
+    border: "rgba(0,255,209,0.2)",
+    problem: "Containerized Node.js app deployed manually — no automated testing, no security scanning, and no rollback capability.",
+    solution: "End-to-end CI/CD pipeline using GitHub Actions, Docker, and Kubernetes. Stages: linting → unit tests → Docker build/push to ECR → Trivy security scanning → automated deployment to EKS with rollback capability.",
+    outcome: "Deployment frequency increased. Security vulnerabilities caught pre-production via Trivy scan. Automated rollback prevents bad deployments from reaching users.",
+    tags: ["GitHub Actions", "Docker", "Kubernetes", "ECR", "Trivy", "EKS"],
+    github: "https://github.com/buildwithsugandha/devops-cicd-pipeline",
     highlights: ["Security Scan", "Auto-rollback", "EKS"],
   },
 ];
@@ -109,35 +109,47 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-lg glass text-white/40 hover:text-neon-teal transition-colors"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg glass text-white/50 hover:text-neon-teal transition-colors text-xs font-mono"
                     aria-label="GitHub repository"
                   >
-                    <Github className="w-4 h-4" />
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-lg glass text-white/40 hover:text-neon-teal transition-colors"
-                    aria-label="Live demo"
-                  >
-                    <ExternalLink className="w-4 h-4" />
+                    <Github className="w-3.5 h-3.5" />
+                    Repository
                   </a>
                 </div>
               </div>
 
               {/* Title */}
-              <h3 className="font-display font-bold text-white text-lg mb-2">
+              <h3 className="font-display font-bold text-white text-lg mb-4">
                 {project.title}
               </h3>
 
-              {/* Description */}
-              <p className="text-white/50 text-sm leading-relaxed flex-1 mb-4">
-                {project.description}
-              </p>
+              {/* Problem / Solution / Outcome */}
+              <div className="space-y-3 flex-1 mb-4">
+                <div className="flex items-start gap-2.5">
+                  <AlertCircle className="w-4 h-4 text-orange-400 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-orange-400 text-xs font-mono uppercase tracking-wide mb-0.5">Problem</p>
+                    <p className="text-white/50 text-sm leading-relaxed">{project.problem}</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <Lightbulb className="w-4 h-4 text-neon-teal mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-neon-teal text-xs font-mono uppercase tracking-wide mb-0.5">Solution</p>
+                    <p className="text-white/50 text-sm leading-relaxed">{project.solution}</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <TrendingUp className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-green-400 text-xs font-mono uppercase tracking-wide mb-0.5">Outcome</p>
+                    <p className="text-white/50 text-sm leading-relaxed">{project.outcome}</p>
+                  </div>
+                </div>
+              </div>
 
               {/* Highlights */}
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-2 mb-3">
                 {project.highlights.map((h) => (
                   <span
                     key={h}
@@ -148,14 +160,13 @@ export default function Projects() {
                       border: `1px solid ${project.border}`,
                     }}
                   >
-                    <Star className="w-2.5 h-2.5" />
-                    {h}
+                    ★ {h}
                   </span>
                 ))}
               </div>
 
               {/* Tech Tags */}
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
                 {project.tags.map((tag) => (
                   <span key={tag} className="skill-badge">
                     {tag}
@@ -166,10 +177,15 @@ export default function Projects() {
           ))}
         </div>
 
+        {/* Note about repos */}
+        <p className="text-center text-white/25 text-xs font-mono mt-6">
+          All repositories available on GitHub · Architecture documentation included in each repo README
+        </p>
+
         {/* CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-4">
           <a
-            href="https://github.com/sugandhsharma"
+            href="https://github.com/buildwithsugandha"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline inline-flex items-center gap-2"

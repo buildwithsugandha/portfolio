@@ -62,7 +62,7 @@ export default function Navbar() {
               <Terminal className="w-4 h-4 text-neon-teal" />
             </div>
             <span className="font-display font-bold text-lg">
-              <span className="text-gradient-teal">Sugandh</span>
+              <span className="text-gradient-teal">Sugandha</span>
               <span className="text-white/60">.</span>
             </span>
           </button>

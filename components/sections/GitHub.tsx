@@ -3,44 +3,36 @@
 import Image from "next/image";
 import { Github, ExternalLink } from "lucide-react";
 
-const GITHUB_USERNAME = "sugandhsharma";
+const GITHUB_USERNAME = "buildwithsugandha";
 
 const pinnedRepos = [
   {
     name: "aws-three-tier-arch",
-    description: "Production-grade three-tier architecture on AWS with Terraform",
-    stars: 12,
-    forks: 3,
+    description: "Production-grade three-tier architecture on AWS with Terraform — VPC, EC2, RDS Multi-AZ, ALB, CloudWatch",
     language: "HCL",
     langColor: "#844FBA",
-    url: "https://github.com/sugandhsharma/aws-three-tier-arch",
+    url: `https://github.com/${GITHUB_USERNAME}/aws-three-tier-arch`,
   },
   {
     name: "k8s-monitoring-stack",
-    description: "Prometheus + Grafana observability stack for Kubernetes clusters",
-    stars: 18,
-    forks: 5,
+    description: "Prometheus + Grafana + Alertmanager observability stack for Kubernetes clusters with SLO tracking",
     language: "YAML",
     langColor: "#CB171E",
-    url: "https://github.com/sugandhsharma/k8s-monitoring-stack",
+    url: `https://github.com/${GITHUB_USERNAME}/k8s-monitoring-stack`,
   },
   {
     name: "terraform-infra-automation",
-    description: "Modular Terraform codebase for multi-environment AWS infrastructure",
-    stars: 9,
-    forks: 2,
+    description: "Modular Terraform codebase for multi-environment AWS infrastructure with remote state and GitHub Actions CI/CD",
     language: "HCL",
     langColor: "#844FBA",
-    url: "https://github.com/sugandhsharma/terraform-infra-automation",
+    url: `https://github.com/${GITHUB_USERNAME}/terraform-infra-automation`,
   },
   {
     name: "devops-cicd-pipeline",
-    description: "End-to-end CI/CD with GitHub Actions, Docker, and EKS",
-    stars: 14,
-    forks: 4,
+    description: "End-to-end CI/CD pipeline with GitHub Actions, Docker, Trivy security scanning, and EKS deployment with rollback",
     language: "YAML",
     langColor: "#CB171E",
-    url: "https://github.com/sugandhsharma/devops-cicd-pipeline",
+    url: `https://github.com/${GITHUB_USERNAME}/devops-cicd-pipeline`,
   },
 ];
 
@@ -55,19 +47,18 @@ export default function GitHub() {
             GitHub
           </span>
           <h2 className="font-display text-4xl sm:text-5xl font-bold">
-            Open Source &amp; <span className="text-gradient">Contributions</span>
+            Activity &amp; <span className="text-gradient">Contributions</span>
           </h2>
           <p className="mt-4 text-white/50 max-w-xl mx-auto">
             Building in public — infrastructure code, automation scripts, and DevOps tooling
           </p>
         </div>
 
-        {/* GitHub Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          {/* Stats */}
+        {/* Stats row: Stats + Streak + Top Languages */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           <div className="glass rounded-2xl p-1 overflow-hidden">
             <Image
-              src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&theme=transparent&hide_border=true&title_color=00FFD1&text_color=94a3b8&icon_color=00B4FF&bg_color=00000000`}
+              src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&theme=transparent&hide_border=true&title_color=00FFD1&text_color=94a3b8&icon_color=00B4FF&bg_color=00000000&hide=stars`}
               alt="GitHub Stats"
               width={400}
               height={200}
@@ -75,8 +66,6 @@ export default function GitHub() {
               unoptimized
             />
           </div>
-
-          {/* Streak */}
           <div className="glass rounded-2xl p-1 overflow-hidden">
             <Image
               src={`https://github-readme-streak-stats.herokuapp.com/?user=${GITHUB_USERNAME}&theme=dark&hide_border=true&background=00000000&stroke=00FFD1&ring=00B4FF&fire=9D4EDD&currStreakLabel=00FFD1&sideLabels=94a3b8&dates=475569`}
@@ -87,8 +76,6 @@ export default function GitHub() {
               unoptimized
             />
           </div>
-
-          {/* Top Languages */}
           <div className="glass rounded-2xl p-1 overflow-hidden">
             <Image
               src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USERNAME}&layout=compact&theme=transparent&hide_border=true&title_color=00FFD1&text_color=94a3b8&bg_color=00000000`}
@@ -113,9 +100,9 @@ export default function GitHub() {
           />
         </div>
 
-        {/* Pinned Repos */}
+        {/* Pinned Repos — no stars/forks, focus on engineering value */}
         <h3 className="font-display font-bold text-xl text-white mb-5">
-          📌 Pinned Repositories
+          📌 Featured Repositories
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
           {pinnedRepos.map((repo) => (
@@ -140,7 +127,7 @@ export default function GitHub() {
                 {repo.description}
               </p>
 
-              <div className="flex items-center gap-4 text-xs text-white/30">
+              <div className="flex items-center gap-2 text-xs text-white/30">
                 <span className="flex items-center gap-1.5">
                   <span
                     className="w-2.5 h-2.5 rounded-full"
@@ -148,8 +135,6 @@ export default function GitHub() {
                   />
                   {repo.language}
                 </span>
-                <span>⭐ {repo.stars}</span>
-                <span>🍴 {repo.forks}</span>
               </div>
             </a>
           ))}

@@ -1,34 +1,34 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MapPin, Linkedin, Github, Send, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Linkedin, Github, Send, CheckCircle, Download } from "lucide-react";
 
 const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@sugandhsharma.dev",
-    href: "mailto:hello@sugandhsharma.dev",
+    value: "Sugandh1212@gmail.com",
+    href: "mailto:Sugandh1212@gmail.com",
     color: "#00FFD1",
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/sugandhsharma",
-    href: "https://linkedin.com/in/sugandhsharma",
+    value: "linkedin.com/in/sugandha-vashishtha",
+    href: "https://linkedin.com/in/sugandha-vashishtha",
     color: "#00B4FF",
   },
   {
     icon: Github,
     label: "GitHub",
-    value: "github.com/sugandhsharma",
-    href: "https://github.com/sugandhsharma",
+    value: "github.com/buildwithsugandha",
+    href: "https://github.com/buildwithsugandha",
     color: "#9D4EDD",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "India",
+    value: "Noida, India",
     href: "#",
     color: "#00FFD1",
   },
@@ -42,7 +42,6 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate submission — replace with your preferred form service (Formspree, Resend, etc.)
     await new Promise((r) => setTimeout(r, 1200));
     setLoading(false);
     setSubmitted(true);
@@ -60,8 +59,9 @@ export default function Contact() {
           <h2 className="font-display text-4xl sm:text-5xl font-bold">
             Let&apos;s <span className="text-gradient">Connect</span>
           </h2>
-          <p className="mt-4 text-white/50 max-w-xl mx-auto">
-            Open to Cloud, DevOps, and SRE opportunities. Drop me a message — I respond within 24 hours.
+          <p className="mt-4 text-white/50 max-w-2xl mx-auto">
+            Open to Infrastructure, Cloud, DevOps, and SRE opportunities at enterprise technology
+            organizations. Drop me a message — I respond within 24 hours.
           </p>
         </div>
 
@@ -79,14 +79,14 @@ export default function Contact() {
                   className="glass glass-hover rounded-xl p-4 flex items-center gap-4 group"
                 >
                   <div
-                    className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                    className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
                     style={{ background: `${item.color}15` }}
                   >
                     <Icon className="w-4 h-4" style={{ color: item.color }} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-white/30 text-xs mb-0.5">{item.label}</p>
-                    <p className="text-white/80 text-sm font-medium group-hover:text-white transition-colors">
+                    <p className="text-white/80 text-sm font-medium group-hover:text-white transition-colors truncate">
                       {item.value}
                     </p>
                   </div>
@@ -94,15 +94,33 @@ export default function Contact() {
               );
             })}
 
-            {/* Status */}
-            <div className="glass rounded-xl p-4 mt-6">
+            {/* Resume download */}
+            <a
+              href="/resume.pdf"
+              download
+              className="glass glass-hover rounded-xl p-4 flex items-center gap-4 group"
+            >
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-neon-teal/10">
+                <Download className="w-4 h-4 text-neon-teal" />
+              </div>
+              <div>
+                <p className="text-white/30 text-xs mb-0.5">Resume</p>
+                <p className="text-white/80 text-sm font-medium group-hover:text-neon-teal transition-colors">
+                  Download PDF
+                </p>
+              </div>
+            </a>
+
+            {/* Availability status */}
+            <div className="glass rounded-xl p-4 mt-2">
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                 <span className="text-green-400 text-sm font-medium">Available for opportunities</span>
               </div>
               <p className="text-white/40 text-xs leading-relaxed">
-                Actively seeking Cloud Engineer, DevOps Engineer, and SRE roles. Open to
-                both remote and India-based positions.
+                Actively seeking Cloud Infrastructure, SRE, and DevOps roles. Open to
+                enterprise technology organizations — Microsoft, Google, Amazon, Deloitte,
+                Accenture, Kyndryl, IBM, and similar. Remote and Noida/India-based positions welcome.
               </p>
             </div>
           </div>
@@ -127,9 +145,7 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-white/40 text-xs mb-1.5 font-mono">
-                        Name *
-                      </label>
+                      <label className="block text-white/40 text-xs mb-1.5 font-mono">Name *</label>
                       <input
                         type="text"
                         required
@@ -137,24 +153,13 @@ export default function Contact() {
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                         placeholder="Your name"
                         className="w-full px-4 py-3 rounded-lg text-sm text-white placeholder-white/20 outline-none transition-all duration-200"
-                        style={{
-                          background: "rgba(255,255,255,0.04)",
-                          border: "1px solid rgba(255,255,255,0.08)",
-                        }}
-                        onFocus={(e) => {
-                          e.target.style.borderColor = "rgba(0,255,209,0.4)";
-                          e.target.style.boxShadow = "0 0 0 3px rgba(0,255,209,0.08)";
-                        }}
-                        onBlur={(e) => {
-                          e.target.style.borderColor = "rgba(255,255,255,0.08)";
-                          e.target.style.boxShadow = "none";
-                        }}
+                        style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+                        onFocus={(e) => { e.target.style.borderColor = "rgba(0,255,209,0.4)"; e.target.style.boxShadow = "0 0 0 3px rgba(0,255,209,0.08)"; }}
+                        onBlur={(e) => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; e.target.style.boxShadow = "none"; }}
                       />
                     </div>
                     <div>
-                      <label className="block text-white/40 text-xs mb-1.5 font-mono">
-                        Email *
-                      </label>
+                      <label className="block text-white/40 text-xs mb-1.5 font-mono">Email *</label>
                       <input
                         type="email"
                         required
@@ -162,51 +167,29 @@ export default function Contact() {
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         placeholder="your@email.com"
                         className="w-full px-4 py-3 rounded-lg text-sm text-white placeholder-white/20 outline-none transition-all duration-200"
-                        style={{
-                          background: "rgba(255,255,255,0.04)",
-                          border: "1px solid rgba(255,255,255,0.08)",
-                        }}
-                        onFocus={(e) => {
-                          e.target.style.borderColor = "rgba(0,255,209,0.4)";
-                          e.target.style.boxShadow = "0 0 0 3px rgba(0,255,209,0.08)";
-                        }}
-                        onBlur={(e) => {
-                          e.target.style.borderColor = "rgba(255,255,255,0.08)";
-                          e.target.style.boxShadow = "none";
-                        }}
+                        style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+                        onFocus={(e) => { e.target.style.borderColor = "rgba(0,255,209,0.4)"; e.target.style.boxShadow = "0 0 0 3px rgba(0,255,209,0.08)"; }}
+                        onBlur={(e) => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; e.target.style.boxShadow = "none"; }}
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-white/40 text-xs mb-1.5 font-mono">
-                      Subject
-                    </label>
+                    <label className="block text-white/40 text-xs mb-1.5 font-mono">Subject</label>
                     <input
                       type="text"
                       value={form.subject}
                       onChange={(e) => setForm({ ...form, subject: e.target.value })}
                       placeholder="Job opportunity / Collaboration / Hello"
                       className="w-full px-4 py-3 rounded-lg text-sm text-white placeholder-white/20 outline-none transition-all duration-200"
-                      style={{
-                        background: "rgba(255,255,255,0.04)",
-                        border: "1px solid rgba(255,255,255,0.08)",
-                      }}
-                      onFocus={(e) => {
-                        e.target.style.borderColor = "rgba(0,255,209,0.4)";
-                        e.target.style.boxShadow = "0 0 0 3px rgba(0,255,209,0.08)";
-                      }}
-                      onBlur={(e) => {
-                        e.target.style.borderColor = "rgba(255,255,255,0.08)";
-                        e.target.style.boxShadow = "none";
-                      }}
+                      style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+                      onFocus={(e) => { e.target.style.borderColor = "rgba(0,255,209,0.4)"; e.target.style.boxShadow = "0 0 0 3px rgba(0,255,209,0.08)"; }}
+                      onBlur={(e) => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; e.target.style.boxShadow = "none"; }}
                     />
                   </div>
 
                   <div>
-                    <label className="block text-white/40 text-xs mb-1.5 font-mono">
-                      Message *
-                    </label>
+                    <label className="block text-white/40 text-xs mb-1.5 font-mono">Message *</label>
                     <textarea
                       required
                       rows={5}
@@ -214,18 +197,9 @@ export default function Contact() {
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                       placeholder="Tell me about the role, project, or just say hi..."
                       className="w-full px-4 py-3 rounded-lg text-sm text-white placeholder-white/20 outline-none transition-all duration-200 resize-none"
-                      style={{
-                        background: "rgba(255,255,255,0.04)",
-                        border: "1px solid rgba(255,255,255,0.08)",
-                      }}
-                      onFocus={(e) => {
-                        e.target.style.borderColor = "rgba(0,255,209,0.4)";
-                        e.target.style.boxShadow = "0 0 0 3px rgba(0,255,209,0.08)";
-                      }}
-                      onBlur={(e) => {
-                        e.target.style.borderColor = "rgba(255,255,255,0.08)";
-                        e.target.style.boxShadow = "none";
-                      }}
+                      style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+                      onFocus={(e) => { e.target.style.borderColor = "rgba(0,255,209,0.4)"; e.target.style.boxShadow = "0 0 0 3px rgba(0,255,209,0.08)"; }}
+                      onBlur={(e) => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; e.target.style.boxShadow = "none"; }}
                     />
                   </div>
 
