@@ -103,7 +103,7 @@ export default function Contact() {
             </p>
           </div>
           <a
-            href="https://calendly.com/sugandh1212"
+            href="https://cal.com/buildwithsugandha-hhcowh"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary flex items-center gap-2 flex-shrink-0 whitespace-nowrap"
@@ -161,7 +161,7 @@ export default function Contact() {
 
             {/* Calendly card */}
             <a
-              href="https://calendly.com/sugandh1212"
+              href="https://cal.com/buildwithsugandha-hhcowh"
               target="_blank"
               rel="noopener noreferrer"
               className="glass glass-hover rounded-xl p-4 flex items-center gap-4 group"
