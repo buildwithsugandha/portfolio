@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, AlertCircle, Lightbulb, TrendingUp } from "lucide-react";
+import { Github, AlertCircle, Lightbulb, TrendingUp } from "lucide-react";
 
 const projects = [
   {
@@ -106,12 +106,13 @@ export default function Projects() {
                 </div>
                 <div className="flex items-center gap-2">
                   <a
-                    href="mailto:Sugandh1212@gmail.com?subject=Project Repository Request"
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg glass text-white/40 hover:text-neon-teal transition-colors text-xs font-mono"
-                    title="Repository available upon request"
                   >
-                    <Mail className="w-3.5 h-3.5" />
-                    Request Repository
+                    <Github className="w-3.5 h-3.5" />
+                    View Repo
                   </a>
                 </div>
               </div>
@@ -175,19 +176,16 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Note about repos */}
-        <p className="text-center text-white/25 text-xs font-mono mt-6">
-          Repository code & architecture documentation available upon request and consultation
-        </p>
-
         {/* CTA */}
-        <div className="text-center mt-4">
+        <div className="text-center mt-8">
           <a
-            href="mailto:Sugandh1212@gmail.com?subject=Project Repository & Consultation Request"
+            href="https://github.com/buildwithsugandha"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-outline inline-flex items-center gap-2"
           >
-            <Mail className="w-4 h-4" />
-            Request Project Details
+            <Github className="w-4 h-4" />
+            View All Projects on GitHub
           </a>
         </div>
       </div>
