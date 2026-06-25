@@ -53,10 +53,23 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left">
-            {/* Status badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass neon-border mb-8 text-xs font-mono">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-green-400">Open to Cloud, DevOps & SRE Opportunities</span>
+            {/* Badges row */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-8">
+              {/* Currently at badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono"
+                style={{ background: "rgba(0,180,255,0.1)", border: "1px solid rgba(0,180,255,0.3)" }}>
+                <span className="w-2 h-2 rounded-full bg-neon-blue animate-pulse" />
+                <span className="text-neon-blue font-semibold">Tech Mahindra</span>
+                <span className="text-white/40">·</span>
+                <span className="text-white/60">Cloud Infrastructure Engineer</span>
+                <span className="text-white/40">·</span>
+                <span className="text-white/40">Jul 2025–Present</span>
+              </div>
+              {/* Open to work badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass neon-border text-xs font-mono">
+                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                <span className="text-green-400">Open to SRE & Cloud Opportunities</span>
+              </div>
             </div>
 
             {/* Greeting */}
