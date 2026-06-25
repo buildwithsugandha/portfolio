@@ -87,6 +87,34 @@ const experiences = [
     achievements: [],
     tags: ["Root Cause Analysis", "Technical Support", "Data Security", "Documentation"],
   },
+  {
+    company: "HI3 Technologies Pvt. Ltd.",
+    project: "Hewlett Packard — India",
+    role: "Technical Support Executive",
+    duration: "Jan 2018 – Jun 2019",
+    type: "Full-time",
+    color: "#00FFD1",
+    responsibilities: [
+      "Troubleshot Windows 8, 8.1, and 10 issues for end users via email and phone; supported a high-volume rollout queue to meet deadlines",
+      "Conducted desktop and laptop troubleshooting for HP enterprise clients; managed escalation workflows and ensured timely issue resolution",
+    ],
+    achievements: [],
+    tags: ["Windows Support", "Desktop Troubleshooting", "HP", "Technical Support", "Escalation Management"],
+  },
+  {
+    company: "Convergys India Pvt. Ltd.",
+    project: "AT&T — Dallas, Texas, United States",
+    role: "Customer Service Representative",
+    duration: "May 2016 – Oct 2017",
+    type: "Full-time",
+    color: "#9D4EDD",
+    responsibilities: [
+      "Delivered customer support across phone, email, and chat for AT&T; resolved billing and service issues with a focus on first-call resolution",
+      "Strengthened client relationships and drove customer satisfaction in a high-volume enterprise contact centre environment",
+    ],
+    achievements: [],
+    tags: ["Customer Support", "AT&T", "Billing & Services", "Communication", "CRM"],
+  },
 ];
 
 export default function Experience() {
