@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "Sugandha Vashishtha Portfolio",
     images: [
       {
-        url: `${BASE_URL}/og-image.png`,
+        url: `${BASE_URL}/og-image.svg`,
         width: 1200,
         height: 630,
         alt: "Sugandha Vashishtha – Cloud & SRE Portfolio",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: "Sugandha Vashishtha | Cloud & SRE Engineer",
     description:
       "9+ years in cloud operations, SRE, AWS, Azure, and enterprise infrastructure. Open to Cloud, DevOps, and SRE opportunities.",
-    images: [`${BASE_URL}/og-image.png`],
+    images: [`${BASE_URL}/og-image.svg`],
   },
   robots: {
     index: true,

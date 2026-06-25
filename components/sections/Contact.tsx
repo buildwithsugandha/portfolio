@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MapPin, Linkedin, Github, Send, CheckCircle, Download } from "lucide-react";
+import { Mail, MapPin, Linkedin, Github, Send, CheckCircle, Download, Calendar } from "lucide-react";
+
+const FORMSPREE_ID = "xqevppzo";
 
 const contactInfo = [
   {
@@ -38,13 +40,35 @@ export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSubmitted(true);
+    setError("");
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        }),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError("Something went wrong. Please email me directly at Sugandh1212@gmail.com");
+      }
+    } catch {
+      setError("Network error. Please email me directly at Sugandh1212@gmail.com");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -63,6 +87,30 @@ export default function Contact() {
             Open to Infrastructure, Cloud, DevOps, and SRE opportunities at enterprise technology
             organizations. Drop me a message — I respond within 24 hours.
           </p>
+        </div>
+
+        {/* Calendly CTA — prominent hire me banner */}
+        <div
+          className="glass rounded-2xl p-6 mb-10 flex flex-col sm:flex-row items-center justify-between gap-4"
+          style={{ border: "1px solid rgba(0,255,209,0.2)" }}
+        >
+          <div>
+            <p className="text-white font-display font-bold text-lg mb-1">
+              Prefer a quick call? 📅
+            </p>
+            <p className="text-white/50 text-sm">
+              Schedule a 15-minute intro call — no commitment, just a conversation about how I can help.
+            </p>
+          </div>
+          <a
+            href="https://calendly.com/sugandh1212"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary flex items-center gap-2 flex-shrink-0 whitespace-nowrap"
+          >
+            <Calendar className="w-4 h-4" />
+            Schedule a Call
+          </a>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -97,7 +145,7 @@ export default function Contact() {
             {/* Resume download */}
             <a
               href="/resume.pdf"
-              download
+              download="Sugandha_Vashishtha_Resume.pdf"
               className="glass glass-hover rounded-xl p-4 flex items-center gap-4 group"
             >
               <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-neon-teal/10">
@@ -111,6 +159,24 @@ export default function Contact() {
               </div>
             </a>
 
+            {/* Calendly card */}
+            <a
+              href="https://calendly.com/sugandh1212"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass glass-hover rounded-xl p-4 flex items-center gap-4 group"
+            >
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "rgba(0,180,255,0.1)" }}>
+                <Calendar className="w-4 h-4 text-neon-blue" />
+              </div>
+              <div>
+                <p className="text-white/30 text-xs mb-0.5">Schedule a Call</p>
+                <p className="text-white/80 text-sm font-medium group-hover:text-neon-blue transition-colors">
+                  Book a 15-min intro
+                </p>
+              </div>
+            </a>
+
             {/* Availability status */}
             <div className="glass rounded-xl p-4 mt-2">
               <div className="flex items-center gap-2 mb-2">
@@ -118,9 +184,9 @@ export default function Contact() {
                 <span className="text-green-400 text-sm font-medium">Available for opportunities</span>
               </div>
               <p className="text-white/40 text-xs leading-relaxed">
-                Actively seeking Cloud Infrastructure, SRE, and DevOps roles. Open to
-                enterprise technology organizations — Microsoft, Google, Amazon, Deloitte,
-                Accenture, Kyndryl, IBM, and similar. Remote and Noida/India-based positions welcome.
+                Actively seeking Cloud Infrastructure, SRE, and DevOps roles at enterprise
+                organizations — Microsoft, Google, Amazon, Deloitte, Accenture, Kyndryl, IBM.
+                Remote and Noida/India-based positions welcome.
               </p>
             </div>
           </div>
@@ -202,6 +268,12 @@ export default function Contact() {
                       onBlur={(e) => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; e.target.style.boxShadow = "none"; }}
                     />
                   </div>
+
+                  {error && (
+                    <p className="text-red-400 text-xs font-mono bg-red-400/10 border border-red-400/20 rounded-lg px-3 py-2">
+                      {error}
+                    </p>
+                  )}
 
                   <button
                     type="submit"
