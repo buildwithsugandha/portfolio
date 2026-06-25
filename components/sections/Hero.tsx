@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { Download, Mail, FolderOpen, MapPin, ChevronDown, Github, Linkedin } from "lucide-react";
 
 const titles = [
@@ -15,6 +14,7 @@ export default function Hero() {
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
+  const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
     const current = titles[titleIndex];
@@ -179,21 +179,26 @@ export default function Hero() {
 
               {/* Profile image container */}
               <div className="absolute inset-4 rounded-full glass neon-border overflow-hidden flex items-center justify-center">
-                <Image
-                  src="/profile.jpg"
-                  alt="Sugandha Vashishtha – Cloud & SRE Engineer"
-                  fill
-                  className="object-cover object-top rounded-full"
-                  priority
-                  onError={(e) => {
-                    const target = e.currentTarget as HTMLImageElement;
-                    target.style.display = "none";
-                    const parent = target.parentElement;
-                    if (parent) {
-                      parent.innerHTML = `<div class="w-full h-full flex items-center justify-center" style="background:radial-gradient(circle at 30% 30%, rgba(0,255,209,0.1) 0%, rgba(0,20,40,0.8) 60%)"><div class="text-center"><div class="w-24 h-24 mx-auto rounded-full mb-2 flex items-center justify-center text-4xl font-bold" style="background:linear-gradient(135deg,rgba(0,255,209,0.3),rgba(0,180,255,0.2));border:2px solid rgba(0,255,209,0.3)"><span style="background:linear-gradient(135deg,#00FFD1,#00B4FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent">SV</span></div></div></div>`;
-                    }
-                  }}
-                />
+                {!imgError ? (
+                  <img
+                    src="/profile.jpg"
+                    alt="Sugandha Vashishtha – Cloud & SRE Engineer"
+                    onError={() => setImgError(true)}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", borderRadius: "9999px" }}
+                  />
+                ) : (
+                  <div
+                    className="w-full h-full flex items-center justify-center"
+                    style={{ background: "radial-gradient(circle at 30% 30%, rgba(0,255,209,0.1) 0%, rgba(0,20,40,0.8) 60%)" }}
+                  >
+                    <div
+                      className="w-24 h-24 rounded-full flex items-center justify-center text-4xl font-bold font-display"
+                      style={{ background: "linear-gradient(135deg, rgba(0,255,209,0.3), rgba(0,180,255,0.2))", border: "2px solid rgba(0,255,209,0.3)" }}
+                    >
+                      <span className="text-gradient">SV</span>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Floating skill badges */}
