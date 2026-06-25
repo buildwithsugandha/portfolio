@@ -6,7 +6,7 @@ const experiences = [
   {
     company: "Tech Mahindra",
     project: "AT&T Bastion — Microsoft Azure & AWS",
-    role: "Software Engineer · Cloud Infrastructure Engineer",
+    role: "Cloud Infrastructure Engineer",
     duration: "Jul 2025 – Present",
     type: "Full-time",
     color: "#00FFD1",
@@ -23,7 +23,7 @@ const experiences = [
   {
     company: "Tech Mahindra",
     project: "Tracfone–Verizon Vulnerability Remediation — AWS",
-    role: "Software Engineer · Quality Analyst",
+    role: "Quality Analyst — Security & Vulnerability",
     duration: "Aug 2024 – Jun 2025",
     type: "Full-time",
     color: "#00B4FF",
@@ -42,7 +42,7 @@ const experiences = [
   {
     company: "Tech Mahindra",
     project: "Microsoft Nebula Score Cloud",
-    role: "Software Engineer · Site Reliability Engineer",
+    role: "Site Reliability Engineer (DRI)",
     duration: "Jul 2022 – Jul 2024",
     type: "Full-time",
     color: "#9D4EDD",

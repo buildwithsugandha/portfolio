@@ -106,7 +106,7 @@ export default function Hero() {
                 Noida, India
               </span>
               <span className="text-white/20 hidden sm:inline">·</span>
-              <span>MCA – Manipal University Jaipur</span>
+              <span>🏆 AWS Certified</span>
               <span className="text-white/20 hidden sm:inline">·</span>
               <span className="text-neon-teal font-mono text-xs">Tech Mahindra</span>
             </div>

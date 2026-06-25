@@ -12,7 +12,7 @@ const completed = [
     bg: "rgba(255,153,0,0.08)",
     border: "rgba(255,153,0,0.25)",
     description: "Designing resilient, cost-optimized, and high-performing architectures on AWS",
-    verifyUrl: "https://aws.amazon.com/verification",
+    verifyUrl: "https://www.credly.com/badges/42740e8c-9fb7-4422-a3eb-3e9464f915da/public_url",
   },
   {
     name: "AWS Certified Cloud Practitioner",
@@ -23,7 +23,29 @@ const completed = [
     bg: "rgba(255,153,0,0.08)",
     border: "rgba(255,153,0,0.25)",
     description: "Foundational AWS cloud concepts, services, security, and billing",
-    verifyUrl: "https://aws.amazon.com/verification",
+    verifyUrl: "https://www.credly.com/badges/0acd94aa-1a4b-422e-9d64-f1dc528ce651/public_url",
+  },
+  {
+    name: "Red Hat System Administration I (RH124) — Ver. 9.3",
+    issuer: "Red Hat",
+    issued: "Issued via Credly",
+    icon: "🎩",
+    color: "#EE0000",
+    bg: "rgba(238,0,0,0.08)",
+    border: "rgba(238,0,0,0.25)",
+    description: "Linux system administration fundamentals on Red Hat Enterprise Linux 9 — users, storage, networking, and services",
+    verifyUrl: "https://www.credly.com/badges/1e3d5cd7-17ea-418b-be50-d12e2e0ebc46/public_url",
+  },
+  {
+    name: "Red Hat System Administration I (RH124) — Ver. 9.0",
+    issuer: "Red Hat",
+    issued: "Issued via Credly",
+    icon: "🎩",
+    color: "#EE0000",
+    bg: "rgba(238,0,0,0.08)",
+    border: "rgba(238,0,0,0.25)",
+    description: "Foundational Red Hat Enterprise Linux administration — file systems, process management, and network configuration",
+    verifyUrl: "https://www.credly.com/badges/686bb41b-d3d9-4857-8995-2005e1a751e6/public_url",
   },
 ];
 
@@ -51,6 +73,8 @@ const inProgress = [
 const roadmap = [
   { step: "✅", label: "AWS Cloud Practitioner", status: "done" },
   { step: "✅", label: "AWS Solutions Architect – Associate", status: "done" },
+  { step: "✅", label: "Red Hat System Administration I (RH124) v9.0", status: "done" },
+  { step: "✅", label: "Red Hat System Administration I (RH124) v9.3", status: "done" },
   { step: "🔄", label: "Certified Kubernetes Administrator (CKA)", status: "active" },
   { step: "🔄", label: "HashiCorp Terraform Associate", status: "active" },
   { step: "⬜", label: "Azure Administrator (AZ-104)", status: "next" },
@@ -71,7 +95,7 @@ export default function Certifications() {
             Credentials & <span className="text-gradient">Learning Path</span>
           </h2>
           <p className="mt-4 text-white/50 max-w-xl mx-auto">
-            AWS certified, actively building toward Kubernetes and Terraform credentials
+            AWS & Red Hat certified — actively building toward Kubernetes and Terraform credentials
           </p>
         </div>
 
@@ -81,10 +105,10 @@ export default function Certifications() {
             <ShieldCheck className="w-5 h-5 text-green-400" />
             <h3 className="font-display font-bold text-white text-lg">Completed</h3>
             <span className="px-2 py-0.5 rounded-full text-xs font-mono bg-green-400/10 text-green-400 border border-green-400/25">
-              2 certifications
+              4 certifications
             </span>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {completed.map((cert) => (
               <div
                 key={cert.name}
