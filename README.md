@@ -1,177 +1,175 @@
-# Sugandha Vashishtha – Portfolio Website
+<div align="center">
 
-A modern, production-ready portfolio website built with **Next.js 14**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**. Designed for DevOps and SRE professionals with a cybersecurity-inspired dark aesthetic, glassmorphism UI, and full Vercel deployment support.
+# Sugandha Vashishtha — Portfolio
 
-## 🚀 Tech Stack
+**Cloud & Site Reliability Engineer · Tech Mahindra · Noida, India**
 
-- **Next.js 14** (App Router)
-- **TypeScript**
-- **Tailwind CSS**
-- **Framer Motion** – animations
-- **Lucide React** – icons
-- **Vercel Analytics**
-- **Next/Font** – Google Fonts (Inter, Space Grotesk, JetBrains Mono)
+[![Live Site](https://img.shields.io/badge/Live_Site-View_Portfolio-00FFD1?style=for-the-badge&logo=vercel&logoColor=black)](https://portfolio-sigma-three-ja7phcdxpl.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://typescriptlang.org)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com)
 
-## ✨ Features
+</div>
 
-- 🌑 Dark glassmorphism design with neon teal/blue/purple accents
-- 📱 Fully responsive (mobile, tablet, desktop)
-- ⌨️ Typewriter title animation in Hero
-- 📊 GitHub stats integration (activity graph, streak, top languages)
-- 🗂️ Sections: Hero, About, Skills, Experience, Certifications, Projects, GitHub, Resume, Contact, Footer
-- 🔍 SEO metadata, Open Graph, sitemap, robots.txt
-- ♿ Accessible (keyboard navigation, ARIA labels, reduced motion support)
-- ⚡ Lighthouse score 95+ target
-- 🌐 Scroll spy active nav highlighting
-- 🔝 Back-to-top button
+---
 
-## 📁 Project Structure
+## Overview
+
+Production-ready personal portfolio built with **Next.js 15 App Router**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**. Dark glassmorphism design with neon accents — built to showcase Cloud Infrastructure, SRE, and DevOps experience to enterprise recruiters.
+
+**Live at:** [portfolio-sigma-three-ja7phcdxpl.vercel.app](https://portfolio-sigma-three-ja7phcdxpl.vercel.app)
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 15 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Animations | Framer Motion |
+| Icons | Lucide React |
+| Fonts | Space Grotesk · Inter · JetBrains Mono |
+| Contact Form | Formspree (`xqevppzo`) |
+| Analytics | Vercel Analytics |
+| Deployment | Vercel (auto-deploy on push to `main`) |
+| Scheduling | Cal.com (`buildwithsugandha-hhcowh`) |
+
+---
+
+## Sections
+
+| Section | Description |
+|---|---|
+| **Hero** | Typewriter title animation, profile photo, Tech Mahindra badge, social links |
+| **About** | Bio, terminal block, education, key metrics |
+| **Skills** | 4 tiers — Expertise / Proficient / Learning / On-Premises |
+| **Experience** | 5 real roles across Tech Mahindra and Xavient Digital (2019–present) |
+| **Certifications** | 4 completed certs with Credly verify links + learning roadmap |
+| **Projects** | 5 projects with Problem / Solution / Outcome structure + live GitHub links |
+| **GitHub** | Stats cards, activity graph, top languages, featured repos |
+| **Resume** | PDF preview + download (`Sugandha_Vashishtha_Resume.pdf`) |
+| **Contact** | Formspree-wired form + Cal.com scheduling + availability status |
+
+---
+
+## Project Structure
 
 ```
 portfolio/
 ├── app/
-│   ├── layout.tsx          # Root layout, metadata, fonts
-│   ├── page.tsx            # Main page composition
-│   ├── globals.css         # Global styles & custom CSS classes
+│   ├── layout.tsx          # Root layout, SEO metadata, JSON-LD, fonts
+│   ├── page.tsx            # Page composition — all sections
+│   ├── globals.css         # Design tokens, utility classes
+│   ├── icon.svg            # Browser tab favicon (SV monogram)
+│   ├── not-found.tsx       # Branded 404 page
 │   ├── sitemap.ts          # XML sitemap
 │   └── robots.ts           # robots.txt
 ├── components/
-│   ├── Background.tsx      # Animated grid + orb background
-│   ├── Navbar.tsx          # Fixed navbar with scroll spy
-│   ├── Footer.tsx          # Footer with branding
+│   ├── Background.tsx      # Animated grid + glow orbs
+│   ├── Navbar.tsx          # Fixed navbar with scroll-spy
+│   ├── Footer.tsx          # Footer with branding + social links
 │   ├── ui/
 │   │   └── BackToTop.tsx   # Scroll-to-top button
 │   └── sections/
-│       ├── Hero.tsx         # Hero with typewriter + floating badges
-│       ├── About.tsx        # About + terminal block
-│       ├── Skills.tsx       # Tabbed skills with progress bars
-│       ├── Experience.tsx   # Timeline with responsibilities
-│       ├── Certifications.tsx
-│       ├── Projects.tsx     # Project cards with GitHub links
-│       ├── GitHub.tsx       # GitHub stats images + pinned repos
-│       ├── Resume.tsx       # Resume preview + download
-│       └── Contact.tsx      # Contact form + info
+│       ├── Hero.tsx        # Typewriter animation + profile photo
+│       ├── About.tsx       # Bio + terminal block + education
+│       ├── Skills.tsx      # Badge-based skill tiers (no % bars)
+│       ├── Experience.tsx  # Timeline with 5 real roles
+│       ├── Certifications.tsx  # Credly-linked certs + roadmap
+│       ├── Projects.tsx    # Problem/Solution/Outcome cards
+│       ├── GitHub.tsx      # GitHub stats + pinned repos
+│       ├── Resume.tsx      # Resume preview + PDF download
+│       └── Contact.tsx     # Formspree form + Cal.com + contact cards
 ├── public/
-│   └── resume.pdf          # ← ADD YOUR RESUME HERE
+│   ├── profile.jpg         # Professional headshot
+│   ├── resume.pdf          # Sugandha_Vashishtha_Resume.pdf
+│   └── og-image.svg        # Open Graph image (1200×630)
+├── .npmrc                  # legacy-peer-deps=true (ESLint compat fix)
+├── vercel.json             # Vercel build config
 ├── tailwind.config.ts
 ├── tsconfig.json
-├── next.config.mjs
 └── package.json
 ```
 
-## 🛠️ Getting Started
+---
 
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn
-
-### Install & Run
+## Running Locally
 
 ```bash
-# Clone the repository
-git clone https://github.com/sugandhsharma/portfolio.git
+# Clone
+git clone https://github.com/buildwithsugandha/portfolio.git
 cd portfolio
 
-# Install dependencies
-npm install
+# Install (legacy flag required for ESLint peer dep)
+npm install --legacy-peer-deps
 
-# Run development server
+# Dev server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Build for Production
+Open [http://localhost:3000](http://localhost:3000)
 
 ```bash
+# Production build
 npm run build
 npm start
 ```
 
-## 📝 Customization
+---
 
-### Update your details
+## Design System
 
-1. **Resume**: Replace `public/resume.pdf` with your actual resume
-2. **GitHub username**: Search for `sugandhsharma` and replace with your GitHub username
-3. **Email**: Update `hello@sugandhsharma.dev` in Contact and Footer
-4. **LinkedIn**: Update the LinkedIn URL
-5. **Domain**: Update `sugandhsharma.dev` in `app/layout.tsx` for Open Graph and canonical URLs
-6. **OG Image**: Add `public/og-image.png` (1200×630px) for social sharing previews
-
-### Add a profile photo
-
-In `components/sections/Hero.tsx`, replace the `SS` initials block with:
-
-```tsx
-<Image
-  src="/images/profile.jpg"
-  alt="Sugandh Sharma"
-  fill
-  className="object-cover"
-/>
-```
-
-Then place your photo at `public/images/profile.jpg`.
-
-### Connect the contact form
-
-The contact form currently simulates submission. To connect it:
-
-**Option 1 – Formspree (easiest):**
-```bash
-# Sign up at formspree.io, create a form, get your endpoint
-```
-Then in `Contact.tsx`, replace the simulated fetch with:
-```ts
-const res = await fetch("https://formspree.io/f/YOUR_ID", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(form),
-});
-```
-
-**Option 2 – Resend + Next.js API Route:**
-Create `app/api/contact/route.ts` with Resend SDK.
-
-## 🚀 Deploy to Vercel
-
-### Option 1: Vercel CLI
-
-```bash
-npm install -g vercel
-vercel login
-vercel --prod
-```
-
-### Option 2: GitHub Integration (recommended)
-
-1. Push your code to GitHub
-2. Go to [vercel.com/new](https://vercel.com/new)
-3. Import your GitHub repository
-4. Vercel auto-detects Next.js — click **Deploy**
-5. Add your custom domain in Project Settings → Domains
-
-### Environment Variables
-
-No environment variables required for the base setup. If you add Formspree, Resend, or other services, add keys in Vercel → Project → Settings → Environment Variables.
-
-## 🎨 Design System
-
-| Token | Value |
-|-------|-------|
-| Neon Teal | `#00FFD1` |
-| Neon Blue | `#00B4FF` |
-| Neon Purple | `#9D4EDD` |
-| Dark Base | `#020817` |
-| Display Font | Space Grotesk |
-| Body Font | Inter |
-| Mono Font | JetBrains Mono |
-
-## 📄 License
-
-MIT — free to use and customize for your own portfolio.
+| Token | Value | Usage |
+|---|---|---|
+| Neon Teal | `#00FFD1` | Primary accents, CTAs |
+| Neon Blue | `#00B4FF` | Secondary accents, badges |
+| Neon Purple | `#9D4EDD` | Tertiary accents |
+| Dark Base | `#0d1526` | Background |
+| Display Font | Space Grotesk | Headings |
+| Body Font | Inter | Body text |
+| Mono Font | JetBrains Mono | Code, labels, tags |
 
 ---
 
-Built with ⚡ by Sugandh Sharma · [sugandhsharma.dev](https://sugandhsharma.dev)
+## Key Features
+
+- **Dark glassmorphism** — frosted glass cards with neon border accents
+- **Typewriter animation** — 3 rotating professional titles in hero
+- **Real contact form** — wired to Formspree, no fake submissions
+- **Cal.com scheduling** — "Schedule a Call" button linked throughout
+- **Credly-verified certs** — all 4 badge verify links are live
+- **Live GitHub repos** — all 5 project cards link to real repos
+- **SEO-ready** — Open Graph, Twitter card, JSON-LD Person schema, sitemap, robots.txt
+- **Custom 404** — branded not-found page matching site design
+- **Vercel Analytics** — traffic tracking enabled
+- **Responsive** — tested on mobile, tablet, and desktop
+
+---
+
+## Deployment
+
+Auto-deploys to Vercel on every push to `main`.
+
+**Vercel settings:**
+- Framework preset: Next.js (auto-detected)
+- Root directory: *(leave blank)*
+- Install command: `npm install --legacy-peer-deps`
+- Build command: `npm run build`
+
+---
+
+## Contact
+
+**Sugandha Vashishtha** — Cloud & Site Reliability Engineer
+
+[Portfolio](https://portfolio-sigma-three-ja7phcdxpl.vercel.app) · [LinkedIn](https://linkedin.com/in/sugandha-vashishtha) · [GitHub](https://github.com/buildwithsugandha) · [Email](mailto:Sugandh1212@gmail.com) · [Schedule a Call](https://cal.com/buildwithsugandha-hhcowh)
+
+---
+
+<div align="center">
+
+Built with ⚡ by **Sugandha Vashishtha**
+
+</div>
