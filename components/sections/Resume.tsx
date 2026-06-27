@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Download, Printer, FileText, Eye } from "lucide-react";
 
 const resumeHighlights = [
@@ -14,6 +15,7 @@ const resumeHighlights = [
 ];
 
 export default function Resume() {
+  const [imgError, setImgError] = useState(false);
   const handleView = () => {
     window.open("/resume.pdf", "_blank");
   };
@@ -48,10 +50,19 @@ export default function Resume() {
               <div className="border-b border-white/10 pb-5">
                 <div className="flex items-center gap-4 mb-3">
                   <div
-                    className="w-14 h-14 rounded-xl flex items-center justify-center text-xl font-bold font-display text-gradient"
+                    className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center text-xl font-bold font-display text-gradient"
                     style={{ background: "rgba(0,255,209,0.1)", border: "1px solid rgba(0,255,209,0.2)" }}
                   >
-                    SV
+                    {!imgError ? (
+                      <img
+                        src="/profile.jpg"
+                        alt="Sugandha Vashishtha"
+                        onError={() => setImgError(true)}
+                        style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
+                      />
+                    ) : (
+                      "SV"
+                    )}
                   </div>
                   <div>
                     <h3 className="font-display text-xl font-bold text-white">Sugandha Vashishtha</h3>
@@ -60,7 +71,7 @@ export default function Resume() {
                 </div>
                 <div className="flex flex-wrap gap-x-4 gap-y-1 text-white/30 text-xs font-mono">
                   <span>📍 Noida, India</span>
-                  <span>📧 Sugandh1212@gmail.com</span>
+                  <span>📧 buildwithsugandha@gmail.com</span>
                   <span>🔗 linkedin.com/in/sugandha-vashishtha</span>
                 </div>
               </div>
