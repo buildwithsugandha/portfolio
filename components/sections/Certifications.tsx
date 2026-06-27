@@ -36,17 +36,6 @@ const completed = [
     description: "Linux system administration fundamentals on Red Hat Enterprise Linux 9 — users, storage, networking, and services",
     verifyUrl: "https://www.credly.com/badges/1e3d5cd7-17ea-418b-be50-d12e2e0ebc46/public_url",
   },
-  {
-    name: "Red Hat System Administration I (RH124) — Ver. 9.0",
-    issuer: "Red Hat",
-    issued: "Issued via Credly",
-    icon: "🎩",
-    color: "#EE0000",
-    bg: "rgba(238,0,0,0.08)",
-    border: "rgba(238,0,0,0.25)",
-    description: "Foundational Red Hat Enterprise Linux administration — file systems, process management, and network configuration",
-    verifyUrl: "https://www.credly.com/badges/686bb41b-d3d9-4857-8995-2005e1a751e6/public_url",
-  },
 ];
 
 const inProgress = [
@@ -70,16 +59,6 @@ const inProgress = [
   },
 ];
 
-const roadmap = [
-  { step: "✅", label: "AWS Cloud Practitioner", status: "done" },
-  { step: "✅", label: "AWS Solutions Architect – Associate", status: "done" },
-  { step: "✅", label: "Red Hat System Administration I (RH124) v9.0", status: "done" },
-  { step: "✅", label: "Red Hat System Administration I (RH124) v9.3", status: "done" },
-  { step: "🔄", label: "Certified Kubernetes Administrator (CKA)", status: "active" },
-  { step: "🔄", label: "HashiCorp Terraform Associate", status: "active" },
-  { step: "⬜", label: "Azure Administrator (AZ-104)", status: "next" },
-  { step: "⬜", label: "Google Professional Cloud DevOps Engineer", status: "next" },
-];
 
 export default function Certifications() {
   return (
@@ -105,7 +84,7 @@ export default function Certifications() {
             <ShieldCheck className="w-5 h-5 text-green-400" />
             <h3 className="font-display font-bold text-white text-lg">Completed</h3>
             <span className="px-2 py-0.5 rounded-full text-xs font-mono bg-green-400/10 text-green-400 border border-green-400/25">
-              4 certifications
+              3 certifications
             </span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -197,54 +176,6 @@ export default function Certifications() {
           </div>
         </div>
 
-        {/* Learning Roadmap Timeline */}
-        <div className="glass rounded-2xl p-6 sm:p-8" style={{ border: "1px solid rgba(255,255,255,0.06)" }}>
-          <h3 className="font-display font-bold text-white text-lg mb-2">
-            🗺️ Certification Roadmap
-          </h3>
-          <p className="text-white/35 text-xs font-mono mb-6">
-            Structured learning path toward cloud-native and SRE mastery
-          </p>
-          <div className="relative">
-            <div className="absolute left-4 top-0 bottom-0 w-px bg-white/10" />
-            <div className="space-y-4 pl-12">
-              {roadmap.map((item, i) => (
-                <div key={i} className="relative flex items-center gap-4">
-                  <div
-                    className="absolute -left-12 w-8 h-8 rounded-full flex items-center justify-center text-sm flex-shrink-0"
-                    style={{
-                      background:
-                        item.status === "done"
-                          ? "rgba(74,222,128,0.15)"
-                          : item.status === "active"
-                          ? "rgba(0,255,209,0.12)"
-                          : "rgba(255,255,255,0.04)",
-                      border:
-                        item.status === "done"
-                          ? "1px solid rgba(74,222,128,0.3)"
-                          : item.status === "active"
-                          ? "1px solid rgba(0,255,209,0.3)"
-                          : "1px solid rgba(255,255,255,0.08)",
-                    }}
-                  >
-                    {item.step}
-                  </div>
-                  <p
-                    className={`text-sm font-medium ${
-                      item.status === "done"
-                        ? "text-green-400"
-                        : item.status === "active"
-                        ? "text-neon-teal"
-                        : "text-white/30"
-                    }`}
-                  >
-                    {item.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

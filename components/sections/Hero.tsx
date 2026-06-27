@@ -94,9 +94,7 @@ export default function Hero() {
 
             {/* Value proposition */}
             <p className="text-white/55 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0 mb-6">
-              9+ years of experience in enterprise infrastructure, cloud operations, incident
-              response, and network reliability. Specializing in AWS, Azure, SRE, and
-              production observability with Dynatrace & Microsoft ICM.
+              Cloud & Infrastructure Engineer — specializing in AWS, Azure, SRE, and enterprise reliability at scale.
             </p>
 
             {/* Location + Education */}
@@ -158,7 +156,7 @@ export default function Hero() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="mailto:Sugandh1212@gmail.com"
+                href="mailto:buildwithsugandha@gmail.com"
                 className="p-2.5 rounded-lg glass glass-hover text-white/50 hover:text-neon-teal transition-all"
                 aria-label="Email"
               >
@@ -214,42 +212,6 @@ export default function Hero() {
                 )}
               </div>
 
-              {/* Floating skill badges */}
-              <div
-                className="absolute -top-2 -right-2 px-3 py-1.5 rounded-full text-xs font-mono font-bold animate-float"
-                style={{
-                  background: "rgba(0,255,209,0.15)",
-                  border: "1px solid rgba(0,255,209,0.4)",
-                  color: "#00FFD1",
-                  animationDuration: "5s",
-                }}
-              >
-                ☁️ AWS
-              </div>
-              <div
-                className="absolute -bottom-2 -left-2 px-3 py-1.5 rounded-full text-xs font-mono font-bold animate-float"
-                style={{
-                  background: "rgba(0,180,255,0.15)",
-                  border: "1px solid rgba(0,180,255,0.4)",
-                  color: "#00B4FF",
-                  animationDuration: "7s",
-                  animationDelay: "1s",
-                }}
-              >
-                🔧 SRE
-              </div>
-              <div
-                className="absolute top-1/2 -right-10 px-3 py-1.5 rounded-full text-xs font-mono font-bold animate-float"
-                style={{
-                  background: "rgba(157,78,221,0.15)",
-                  border: "1px solid rgba(157,78,221,0.4)",
-                  color: "#9D4EDD",
-                  animationDuration: "6s",
-                  animationDelay: "2s",
-                }}
-              >
-                🛡️ Azure
-              </div>
             </div>
 
             {/* Quick stats strip below photo */}

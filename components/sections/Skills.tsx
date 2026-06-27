@@ -10,18 +10,18 @@ const skillTiers = [
     border: "rgba(0,255,209,0.25)",
     dotColor: "bg-neon-teal",
     skills: [
-      { name: "Microsoft Azure", icon: "🔵" },
-      { name: "AWS", icon: "🟠" },
-      { name: "Incident Management", icon: "🚨" },
-      { name: "SRE / DRI", icon: "🛡️" },
-      { name: "Dynatrace", icon: "📊" },
-      { name: "Microsoft ICM", icon: "🔔" },
-      { name: "Azure Bastion", icon: "🔐" },
-      { name: "Linux Administration", icon: "🐧" },
-      { name: "Windows Server", icon: "🪟" },
-      { name: "KQL (Kusto)", icon: "🔍" },
-      { name: "SQL", icon: "🗄️" },
-      { name: "SLA / SLO Management", icon: "📈" },
+      { name: "Microsoft Azure", icon: "" },
+      { name: "AWS", icon: "" },
+      { name: "Incident Management", icon: "" },
+      { name: "SRE / DRI", icon: "" },
+      { name: "Dynatrace", icon: "" },
+      { name: "Microsoft ICM", icon: "" },
+      { name: "Azure Bastion", icon: "" },
+      { name: "Linux Administration", icon: "" },
+      { name: "Windows Server", icon: "" },
+      { name: "KQL (Kusto)", icon: "" },
+      { name: "SQL", icon: "" },
+      { name: "SLA / SLO Management", icon: "" },
     ],
   },
   {
@@ -33,18 +33,22 @@ const skillTiers = [
     border: "rgba(0,180,255,0.25)",
     dotColor: "bg-neon-blue",
     skills: [
-      { name: "SAST / DAST", icon: "🔒" },
-      { name: "Vulnerability Remediation", icon: "🩹" },
-      { name: "AWS EC2 & IAM", icon: "☁️" },
-      { name: "AWS Session Manager", icon: "🔑" },
-      { name: "Hawkeye & Jarvis", icon: "👁️" },
-      { name: "Shell Scripting", icon: "📜" },
-      { name: "Python (Fundamentals)", icon: "🐍" },
-      { name: "Docker", icon: "🐳" },
-      { name: "CI/CD Pipelines", icon: "⚡" },
-      { name: "Git & GitHub", icon: "🐙" },
-      { name: "GitHub Copilot", icon: "🤖" },
-      { name: "TCP/IP & Networking", icon: "🌐" },
+      { name: "Terraform", icon: "" },
+      { name: "Kubernetes", icon: "" },
+      { name: "GitHub Actions", icon: "" },
+      { name: "Prometheus & Grafana", icon: "" },
+      { name: "Docker", icon: "" },
+      { name: "SAST / DAST", icon: "" },
+      { name: "Vulnerability Remediation", icon: "" },
+      { name: "AWS EC2 & IAM", icon: "" },
+      { name: "AWS Session Manager", icon: "" },
+      { name: "Hawkeye & Jarvis", icon: "" },
+      { name: "Shell Scripting", icon: "" },
+      { name: "Python (Fundamentals)", icon: "" },
+      { name: "CI/CD Pipelines", icon: "" },
+      { name: "Git & GitHub", icon: "" },
+      { name: "GitHub Copilot", icon: "" },
+      { name: "TCP/IP & Networking", icon: "" },
     ],
   },
   {
@@ -56,12 +60,9 @@ const skillTiers = [
     border: "rgba(157,78,221,0.25)",
     dotColor: "bg-purple-400",
     skills: [
-      { name: "Kubernetes", icon: "☸️" },
-      { name: "Terraform", icon: "🌍" },
-      { name: "Prometheus & Grafana", icon: "📉" },
-      { name: "GitHub Actions", icon: "⚙️" },
-      { name: "Ansible", icon: "🅰️" },
-      { name: "Snowflake", icon: "❄️" },
+      { name: "Snowflake", icon: "" },
+      { name: "CKA (Kubernetes Admin)", icon: "" },
+      { name: "HashiCorp Terraform Associate", icon: "" },
     ],
   },
 ];
@@ -114,15 +115,14 @@ export default function Skills() {
                 {tier.skills.map((skill) => (
                   <div
                     key={skill.name}
-                    className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:scale-105"
+                    className="px-3.5 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:scale-105"
                     style={{
                       background: tier.bg,
                       border: `1px solid ${tier.border}`,
                       color: "rgba(255,255,255,0.85)",
                     }}
                   >
-                    <span className="text-base leading-none">{skill.icon}</span>
-                    <span>{skill.name}</span>
+                    {skill.name}
                   </div>
                 ))}
               </div>
@@ -143,26 +143,19 @@ export default function Skills() {
           </p>
           <div className="flex flex-wrap gap-2.5">
             {[
-              { name: "Microsoft Nebula", icon: "⚡" },
-              { name: "Cloudman", icon: "☁️" },
-              { name: "Fabric Manager", icon: "🔧" },
-              { name: "RAID Configuration", icon: "💾" },
-              { name: "Bare Metal Ops", icon: "🖥️" },
-              { name: "WDS", icon: "📦" },
-              { name: "DHCP Scoping", icon: "🌐" },
-              { name: "Hardware Management", icon: "🔩" },
-            ].map((skill) => (
+              "Microsoft Nebula", "Cloudman", "Fabric Manager", "RAID Configuration",
+              "Bare Metal Ops", "WDS", "DHCP Scoping", "Hardware Management",
+            ].map((name) => (
               <div
-                key={skill.name}
-                className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-medium hover:scale-105 transition-all duration-200"
+                key={name}
+                className="px-3.5 py-2 rounded-xl text-sm font-medium hover:scale-105 transition-all duration-200"
                 style={{
                   background: "rgba(255,153,0,0.06)",
                   border: "1px solid rgba(255,153,0,0.2)",
                   color: "rgba(255,255,255,0.85)",
                 }}
               >
-                <span className="text-base leading-none">{skill.icon}</span>
-                <span>{skill.name}</span>
+                {name}
               </div>
             ))}
           </div>

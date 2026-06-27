@@ -84,7 +84,7 @@ export default function About() {
                     Master of Computer Applications (MCA) — Pursuing
                   </p>
                   <p className="text-white/40 text-xs mt-0.5">
-                    Manipal University Jaipur · 2026 – 2028 · Distance Learning
+                    Manipal University Jaipur · 2026 – 2028
                   </p>
                 </div>
               </div>
@@ -95,7 +95,7 @@ export default function About() {
                     Bachelor of Computer Applications (BCA)
                   </p>
                   <p className="text-white/40 text-xs mt-0.5">
-                    Manipal University Jaipur · 2022 – 2025 · Distance Learning
+                    Manipal University Jaipur · 2022 – 2025
                   </p>
                 </div>
               </div>

@@ -9,8 +9,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "Sugandh1212@gmail.com",
-    href: "mailto:Sugandh1212@gmail.com",
+    value: "buildwithsugandha@gmail.com",
+    href: "mailto:buildwithsugandha@gmail.com",
     color: "#00FFD1",
   },
   {
@@ -62,10 +62,10 @@ export default function Contact() {
       if (res.ok) {
         setSubmitted(true);
       } else {
-        setError("Something went wrong. Please email me directly at Sugandh1212@gmail.com");
+        setError("Something went wrong. Please email me directly at buildwithsugandha@gmail.com");
       }
     } catch {
-      setError("Network error. Please email me directly at Sugandh1212@gmail.com");
+      setError("Network error. Please email me directly at buildwithsugandha@gmail.com");
     } finally {
       setLoading(false);
     }
@@ -185,8 +185,7 @@ export default function Contact() {
               </div>
               <p className="text-white/40 text-xs leading-relaxed">
                 Actively seeking Cloud Infrastructure, SRE, and DevOps roles at enterprise
-                organizations — Microsoft, Google, Amazon, Deloitte, Accenture, Kyndryl, IBM.
-                Remote and Noida/India-based positions welcome.
+                technology organizations. Remote and Noida/India-based positions welcome.
               </p>
             </div>
           </div>

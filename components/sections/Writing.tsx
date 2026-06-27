@@ -75,22 +75,6 @@ const articles = [
     tagColor: "#9D4EDD",
     href: "https://www.linkedin.com/pulse/empowering-ai-unleashing-potential-chat-gpt-prompt-vashishtha/",
   },
-  {
-    title: "How AWS Is Helping Big Companies",
-    platform: "LinkedIn",
-    date: "Apr 2023",
-    tag: "AWS",
-    tagColor: "#FF9900",
-    href: "https://www.linkedin.com/pulse/how-aws-helping-big-companies-sugandha-vashishtha/",
-  },
-  {
-    title: "Companies That Use AWS",
-    platform: "LinkedIn",
-    date: "Feb 2023",
-    tag: "AWS",
-    tagColor: "#FF9900",
-    href: "https://www.linkedin.com/pulse/companies-use-aws-sugandha-vashishtha/",
-  },
 ];
 
 const platformIcon = (platform: string) =>

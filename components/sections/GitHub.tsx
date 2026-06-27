@@ -1,7 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, GitBranch, Code2, Shield, Activity } from "lucide-react";
 
 const GITHUB_USERNAME = "buildwithsugandha";
 
@@ -54,50 +53,28 @@ export default function GitHub() {
           </p>
         </div>
 
-        {/* Stats row: Stats + Streak + Top Languages */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-          <div className="glass rounded-2xl p-1 overflow-hidden">
-            <Image
-              src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&theme=transparent&hide_border=true&title_color=00FFD1&text_color=94a3b8&icon_color=00B4FF&bg_color=00000000&hide=stars`}
-              alt="GitHub Stats"
-              width={400}
-              height={200}
-              className="w-full rounded-xl"
-              unoptimized
-            />
-          </div>
-          <div className="glass rounded-2xl p-1 overflow-hidden">
-            <Image
-              src={`https://github-readme-streak-stats.herokuapp.com/?user=${GITHUB_USERNAME}&theme=dark&hide_border=true&background=00000000&stroke=00FFD1&ring=00B4FF&fire=9D4EDD&currStreakLabel=00FFD1&sideLabels=94a3b8&dates=475569`}
-              alt="GitHub Streak"
-              width={400}
-              height={200}
-              className="w-full rounded-xl"
-              unoptimized
-            />
-          </div>
-          <div className="glass rounded-2xl p-1 overflow-hidden">
-            <Image
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USERNAME}&layout=compact&theme=transparent&hide_border=true&title_color=00FFD1&text_color=94a3b8&bg_color=00000000`}
-              alt="Top Languages"
-              width={400}
-              height={200}
-              className="w-full rounded-xl"
-              unoptimized
-            />
-          </div>
-        </div>
-
-        {/* Activity Graph */}
-        <div className="glass rounded-2xl p-1 overflow-hidden mb-8">
-          <Image
-            src={`https://github-readme-activity-graph.vercel.app/graph?username=${GITHUB_USERNAME}&theme=react-dark&hide_border=true&bg_color=0d1526&color=00FFD1&line=00B4FF&point=9D4EDD&area=true&area_color=00FFD1`}
-            alt="GitHub Activity Graph"
-            width={1200}
-            height={300}
-            className="w-full rounded-xl"
-            unoptimized
-          />
+        {/* Stats row */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+          {[
+            { icon: GitBranch, label: "Public Repos", value: "5", color: "#00FFD1" },
+            { icon: Code2, label: "Primary Languages", value: "HCL · YAML", color: "#00B4FF" },
+            { icon: Shield, label: "Security Scans", value: "Trivy + SAST", color: "#9D4EDD" },
+            { icon: Activity, label: "Active Projects", value: "IaC · K8s · CI/CD", color: "#FF9900" },
+          ].map((stat) => {
+            const Icon = stat.icon;
+            return (
+              <div key={stat.label} className="glass rounded-2xl p-5 flex flex-col gap-2">
+                <div
+                  className="w-9 h-9 rounded-lg flex items-center justify-center"
+                  style={{ background: `${stat.color}12` }}
+                >
+                  <Icon className="w-4 h-4" style={{ color: stat.color }} />
+                </div>
+                <p className="text-white/40 text-xs font-mono">{stat.label}</p>
+                <p className="text-white font-bold text-sm font-mono">{stat.value}</p>
+              </div>
+            );
+          })}
         </div>
 
         {/* Pinned Repos — no stars/forks, focus on engineering value */}
